@@ -1,6 +1,6 @@
 {
  "source": "https://www.lakemichigancollege.edu/directory",
- "count": 552,
+ "count": 551,
  "entries": [
   {
    "id": "akoo",
@@ -4084,17 +4084,6 @@
    "phone": "269-927-8701"
   },
   {
-   "id": "mrainey",
-   "name": "Mathew Rainey",
-   "title": "Network Engineer and Security Manager",
-   "dept": "Information Technologies",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "C-229F",
-   "email": "mrainey@lakemichigancollege.edu",
-   "phone": "269-927-6707"
-  },
-  {
    "id": "mbeaty",
    "name": "Matt Beaty",
    "title": "Adjunct Faculty, English",
@@ -6075,5 +6064,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-10-20T12:42:39.935Z"
+ "updated": "2026-10-23T12:36:40.944Z"
 }
