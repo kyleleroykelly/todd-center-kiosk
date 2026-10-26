@@ -2,9 +2,30 @@
   "source": "https://lakemichigancollege.events.prod.coursedog.com",
   "building": "Todd Center",
   "dates": [
-    "2026-10-25",
-    "2026-10-26"
+    "2026-10-26",
+    "2026-10-27"
   ],
-  "events": [],
-  "updated": "2026-10-25T05:11:52.092Z"
+  "events": [
+    {
+      "date": "2026-10-27",
+      "start": "17:00",
+      "end": "18:00",
+      "title": "Board of Trustees Meeting",
+      "location": "TC-1301 (Board of Trustees Conference Room)",
+      "room": "TC-1301",
+      "details": "Board meeting",
+      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/OUB4zqLuKb1Hpw0yAv0M/LiP2PXSBCodAgg5cLVtr"
+    },
+    {
+      "date": "2026-10-27",
+      "start": "18:00",
+      "end": "21:00",
+      "title": "Project Management Accelerator",
+      "location": "TC-1413 (Classroom)",
+      "room": "TC-1413",
+      "details": "",
+      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/LM3hUcUd3xCgf5f67uZf/onuyTPt62LdUgyxcd2HG8"
+    }
+  ],
+  "updated": "2026-10-26T07:37:56.299Z"
 }
