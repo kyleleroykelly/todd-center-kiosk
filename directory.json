@@ -1,6 +1,6 @@
 {
  "source": "https://www.lakemichigancollege.edu/directory",
- "count": 551,
+ "count": 552,
  "entries": [
   {
    "id": "akoo",
@@ -245,7 +245,7 @@
    "phone": "269-927-6713"
   },
   {
-   "id": "aescrima",
+   "id": "ascrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -256,7 +256,7 @@
    "phone": "269-927-8777"
   },
   {
-   "id": "ascrima",
+   "id": "aescrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -726,6 +726,17 @@
    "building": "Main Building",
    "room": "",
    "email": "cpauley@lakemichigancollege.edu",
+   "phone": ""
+  },
+  {
+   "id": "cstreu",
+   "name": "Cali Streu",
+   "title": "Specialist, Records and Registration",
+   "dept": "Records & Registration",
+   "campus": "Benton Harbor Campus",
+   "building": "Main Building",
+   "room": "",
+   "email": "cstreu@lakemichigancollege.edu",
    "phone": ""
   },
   {
@@ -1895,17 +1906,6 @@
    "phone": "(269) 927-4851"
   },
   {
-   "id": "5d372a8e2ca6df6890dae126",
-   "name": "Facilities Management, Safety & Security",
-   "title": "Facilities Management, Safety & Security",
-   "dept": "Facilities Management",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "S-104",
-   "email": "Facilities@lakemichigancollege.edu",
-   "phone": "269-927-8135"
-  },
-  {
    "id": "5d372a8e2ca6df6890dae129",
    "name": "Facilities Management, Safety & Security",
    "title": "Facilities Management, Safety & Security",
@@ -1915,6 +1915,17 @@
    "room": "S-111",
    "email": "abelden@lakemichigancollege.edu",
    "phone": "(269) 925-7846"
+  },
+  {
+   "id": "5d372a8e2ca6df6890dae126",
+   "name": "Facilities Management, Safety & Security",
+   "title": "Facilities Management, Safety & Security",
+   "dept": "Facilities Management",
+   "campus": "Benton Harbor Campus",
+   "building": "Main Building",
+   "room": "S-104",
+   "email": "Facilities@lakemichigancollege.edu",
+   "phone": "269-927-8135"
   },
   {
    "id": "fterris",
@@ -3105,17 +3116,6 @@
    "phone": ""
   },
   {
-   "id": "kosborn",
-   "name": "Karen Osborn",
-   "title": "Specialist, Accounts Payable",
-   "dept": "Financial Services",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "B-202",
-   "email": "kosborn@lakemichigancollege.edu",
-   "phone": "269-927-6836"
-  },
-  {
    "id": "kcheevers",
    "name": "Kari Cheevers",
    "title": "Director, Early College",
@@ -4082,6 +4082,17 @@
    "room": "C-222f",
    "email": "mfish@lakemichigancollege.edu",
    "phone": "269-927-8701"
+  },
+  {
+   "id": "mrainey",
+   "name": "Mathew Rainey",
+   "title": "Network Engineer and Security Manager",
+   "dept": "Information Technologies",
+   "campus": "Benton Harbor Campus",
+   "building": "Main Building",
+   "room": "C-229F",
+   "email": "mrainey@lakemichigancollege.edu",
+   "phone": "269-927-6707"
   },
   {
    "id": "mbeaty",
@@ -6064,5 +6075,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-10-23T12:36:40.944Z"
+ "updated": "2026-10-26T14:14:54.379Z"
 }
