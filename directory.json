@@ -1906,17 +1906,6 @@
    "phone": "(269) 927-4851"
   },
   {
-   "id": "5d372a8e2ca6df6890dae129",
-   "name": "Facilities Management, Safety & Security",
-   "title": "Facilities Management, Safety & Security",
-   "dept": "",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "S-111",
-   "email": "abelden@lakemichigancollege.edu",
-   "phone": "(269) 925-7846"
-  },
-  {
    "id": "5d372a8e2ca6df6890dae126",
    "name": "Facilities Management, Safety & Security",
    "title": "Facilities Management, Safety & Security",
@@ -1926,6 +1915,17 @@
    "room": "S-104",
    "email": "Facilities@lakemichigancollege.edu",
    "phone": "269-927-8135"
+  },
+  {
+   "id": "5d372a8e2ca6df6890dae129",
+   "name": "Facilities Management, Safety & Security",
+   "title": "Facilities Management, Safety & Security",
+   "dept": "",
+   "campus": "Benton Harbor Campus",
+   "building": "Main Building",
+   "room": "S-111",
+   "email": "abelden@lakemichigancollege.edu",
+   "phone": "(269) 925-7846"
   },
   {
    "id": "fterris",
@@ -6075,5 +6075,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-10-26T14:14:54.379Z"
+ "updated": "2026-10-27T13:11:11.451Z"
 }
