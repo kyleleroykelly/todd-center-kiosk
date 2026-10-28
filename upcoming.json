@@ -2,7 +2,6 @@
   "source": "https://lakemichigancollege.events.prod.coursedog.com",
   "building": "Todd Center",
   "dates": [
-    "2026-10-27",
     "2026-10-28",
     "2026-10-29",
     "2026-10-30",
@@ -64,29 +63,10 @@
     "2026-12-25",
     "2026-12-26",
     "2026-12-27",
-    "2026-12-28"
+    "2026-12-28",
+    "2026-12-29"
   ],
   "events": [
-    {
-      "date": "2026-10-27",
-      "start": "17:00",
-      "end": "18:00",
-      "title": "Board of Trustees Meeting",
-      "location": "TC-1301 (Board of Trustees Conference Room)",
-      "room": "TC-1301",
-      "details": "Board meeting",
-      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/OUB4zqLuKb1Hpw0yAv0M/LiP2PXSBCodAgg5cLVtr"
-    },
-    {
-      "date": "2026-10-27",
-      "start": "18:00",
-      "end": "21:00",
-      "title": "Project Management Accelerator",
-      "location": "TC-1413 (Classroom)",
-      "room": "TC-1413",
-      "details": "",
-      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/LM3hUcUd3xCgf5f67uZf/onuyTPt62LdUgyxcd2HG8"
-    },
     {
       "date": "2026-10-30",
       "start": "08:00",
@@ -106,6 +86,26 @@
       "room": "TC-1413",
       "details": "",
       "url": "https://lakemichigancollege.events.prod.coursedog.com/events/LM3hUcUd3xCgf5f67uZf/onuyTPt62LdUgyxcd2HG9"
+    },
+    {
+      "date": "2026-11-09",
+      "start": "08:30",
+      "end": "12:00",
+      "title": "AI Mastery Bootcamp",
+      "location": "TC-1413 (Classroom)",
+      "room": "TC-1413",
+      "details": "Teaching community about AI",
+      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/bRcJaiFYcZTRfisRxjxq/TSxIIpcvjQkcPzywiMzv"
+    },
+    {
+      "date": "2026-11-09",
+      "start": "09:30",
+      "end": "11:30",
+      "title": "Career Check-Up Table",
+      "location": "TC-1010 (Lobby)",
+      "room": "TC-1010",
+      "details": "Career checkup tables Is your career plan in good health? Stop by one of our Career Check-Up Tables to get quick and personalized career support! Whether you need a resume review, help finding a job on Handshake, tips to",
+      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/wnhva2cJpnOGSjJ1hL6J/l0LX1cv7eKl2fflrmrax"
     },
     {
       "date": "2026-11-10",
@@ -178,6 +178,16 @@
       "url": "https://lakemichigancollege.events.prod.coursedog.com/events/lHYTm0FU2N5tZGb4gOGO/GU0NSIZOq2B6rW7aWT5c"
     },
     {
+      "date": "2026-12-07",
+      "start": "09:00",
+      "end": "16:00",
+      "title": "Professionalism & Soft Skills Bootcamp",
+      "location": "TC-1413 (Classroom)",
+      "room": "TC-1413",
+      "details": "",
+      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/NQqgOVzAzUVdjIhWj3LK/yDBKslG9eFtUQpWonhXY"
+    },
+    {
       "date": "2026-12-08",
       "start": "18:00",
       "end": "21:00",
@@ -186,6 +196,16 @@
       "room": "TC-1413",
       "details": "",
       "url": "https://lakemichigancollege.events.prod.coursedog.com/events/LM3hUcUd3xCgf5f67uZf/onuyTPt62LdUgyxcd2HG14"
+    },
+    {
+      "date": "2026-12-14",
+      "start": "08:30",
+      "end": "12:00",
+      "title": "AI-Enhanced Business Communications: Clarity, Speed & Impact",
+      "location": "TC-1413 (Classroom)",
+      "room": "TC-1413",
+      "details": "",
+      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/JVzhQJLIYsRXtyOkmF2V/li2h8lJirmbM6zRSmUaQ"
     },
     {
       "date": "2026-12-15",
@@ -218,5 +238,5 @@
       "url": "https://lakemichigancollege.events.prod.coursedog.com/events/LM3hUcUd3xCgf5f67uZf/onuyTPt62LdUgyxcd2HG16"
     }
   ],
-  "updated": "2026-10-27T12:39:54.346Z"
+  "updated": "2026-10-28T13:31:02.451Z"
 }
