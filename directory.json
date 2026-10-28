@@ -1,6 +1,6 @@
 {
  "source": "https://www.lakemichigancollege.edu/directory",
- "count": 552,
+ "count": 551,
  "entries": [
   {
    "id": "akoo",
@@ -245,7 +245,7 @@
    "phone": "269-927-6713"
   },
   {
-   "id": "ascrima",
+   "id": "aescrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -256,7 +256,7 @@
    "phone": "269-927-8777"
   },
   {
-   "id": "aescrima",
+   "id": "ascrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -803,17 +803,6 @@
    "building": "Main Building",
    "room": "",
    "email": "cbevelhymer@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
-   "id": "cselzer",
-   "name": "Carl Selzer",
-   "title": "Wine Technician",
-   "dept": "",
-   "campus": "Benton Harbor Campus",
-   "building": "Welch Center",
-   "room": "",
-   "email": "cselzer@lakemichigancollege.edu",
    "phone": ""
   },
   {
@@ -6075,5 +6064,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-10-27T13:11:11.451Z"
+ "updated": "2026-10-28T13:59:55.405Z"
 }
