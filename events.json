@@ -2,9 +2,20 @@
   "source": "https://lakemichigancollege.events.prod.coursedog.com",
   "building": "Todd Center",
   "dates": [
-    "2026-10-28",
-    "2026-10-29"
+    "2026-10-29",
+    "2026-10-30"
   ],
-  "events": [],
-  "updated": "2026-10-28T06:08:26.991Z"
+  "events": [
+    {
+      "date": "2026-10-30",
+      "start": "08:00",
+      "end": "18:00",
+      "title": "Project Management Accelerator",
+      "location": "TC-1413 (Classroom)",
+      "room": "TC-1413",
+      "details": "",
+      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/wFSYKwKRbP739LCivhzW/b6nz8Bji0hbCY8sc6GBK"
+    }
+  ],
+  "updated": "2026-10-29T08:16:27.737Z"
 }
