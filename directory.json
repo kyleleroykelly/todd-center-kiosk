@@ -1,6 +1,6 @@
 {
  "source": "https://www.lakemichigancollege.edu/directory",
- "count": 551,
+ "count": 553,
  "entries": [
   {
    "id": "akoo",
@@ -245,7 +245,7 @@
    "phone": "269-927-6713"
   },
   {
-   "id": "aescrima",
+   "id": "ascrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -256,7 +256,7 @@
    "phone": "269-927-8777"
   },
   {
-   "id": "ascrima",
+   "id": "aescrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -735,9 +735,9 @@
    "dept": "Records & Registration",
    "campus": "Benton Harbor Campus",
    "building": "Main Building",
-   "room": "",
+   "room": "A222-6",
    "email": "cstreu@lakemichigancollege.edu",
-   "phone": ""
+   "phone": "269-927-6592"
   },
   {
    "id": "cmatheny",
@@ -803,6 +803,17 @@
    "building": "Main Building",
    "room": "",
    "email": "cbevelhymer@lakemichigancollege.edu",
+   "phone": ""
+  },
+  {
+   "id": "cselzer",
+   "name": "Carl Selzer",
+   "title": "Wine Technician",
+   "dept": "",
+   "campus": "Benton Harbor Campus",
+   "building": "Welch Center",
+   "room": "",
+   "email": "cselzer@lakemichigancollege.edu",
    "phone": ""
   },
   {
@@ -1895,17 +1906,6 @@
    "phone": "(269) 927-4851"
   },
   {
-   "id": "5d372a8e2ca6df6890dae126",
-   "name": "Facilities Management, Safety & Security",
-   "title": "Facilities Management, Safety & Security",
-   "dept": "Facilities Management",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "S-104",
-   "email": "Facilities@lakemichigancollege.edu",
-   "phone": "269-927-8135"
-  },
-  {
    "id": "5d372a8e2ca6df6890dae129",
    "name": "Facilities Management, Safety & Security",
    "title": "Facilities Management, Safety & Security",
@@ -1915,6 +1915,17 @@
    "room": "S-111",
    "email": "abelden@lakemichigancollege.edu",
    "phone": "(269) 925-7846"
+  },
+  {
+   "id": "5d372a8e2ca6df6890dae126",
+   "name": "Facilities Management, Safety & Security",
+   "title": "Facilities Management, Safety & Security",
+   "dept": "Facilities Management",
+   "campus": "Benton Harbor Campus",
+   "building": "Main Building",
+   "room": "S-104",
+   "email": "Facilities@lakemichigancollege.edu",
+   "phone": "269-927-8135"
   },
   {
    "id": "fterris",
@@ -1959,17 +1970,6 @@
    "room": "A-202",
    "email": "finaid@lakemichigancollege.edu",
    "phone": "269-927-8112"
-  },
-  {
-   "id": "5d372a8e2ca6df6890dae130",
-   "name": "Financial Services",
-   "title": "Financial Services",
-   "dept": "Financial Services",
-   "campus": "Benton Harbor Campus",
-   "building": "Todd Center",
-   "room": "TC-2301",
-   "email": "procards@lakemichigancollege.edu",
-   "phone": ""
   },
   {
    "id": "5d372a8e2ca6df6890dae124",
@@ -3028,6 +3028,17 @@
    "phone": ""
   },
   {
+   "id": "jwilliams",
+   "name": "Junethea Williams",
+   "title": "Coordinator, One Stop",
+   "dept": "Bursar's Office",
+   "campus": "Benton Harbor Campus",
+   "building": "Main Building",
+   "room": "",
+   "email": "jwilliams@lakemichigancollege.edu",
+   "phone": ""
+  },
+  {
    "id": "jjones",
    "name": "Justin Jones",
    "title": "Maintenance Technician II",
@@ -3086,7 +3097,7 @@
    "id": "kevans",
    "name": "Kamryn Evans",
    "title": "Tutor",
-   "dept": "Learning Assistance & Testing",
+   "dept": "Learning Assistance & Testing Services",
    "campus": "Benton Harbor Campus",
    "building": "Main Building",
    "room": "",
@@ -6031,6 +6042,17 @@
    "phone": "269-927-8167"
   },
   {
+   "id": "kmetz",
+   "name": "Z Metz",
+   "title": "Tutor",
+   "dept": "Learning Assistance & Testing Services",
+   "campus": "Benton Harbor Campus",
+   "building": "Main Building",
+   "room": "",
+   "email": "kmetz@lakemichigancollege.edu",
+   "phone": ""
+  },
+  {
    "id": "zedwards",
    "name": "Zachary Edwards",
    "title": "Adjunct Faculty, Philosophy",
@@ -6064,5 +6086,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-10-28T13:59:55.405Z"
+ "updated": "2026-10-29T14:15:31.741Z"
 }
