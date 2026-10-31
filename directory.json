@@ -1,6 +1,6 @@
 {
  "source": "https://www.lakemichigancollege.edu/directory",
- "count": 553,
+ "count": 551,
  "entries": [
   {
    "id": "akoo",
@@ -245,7 +245,7 @@
    "phone": "269-927-6713"
   },
   {
-   "id": "ascrima",
+   "id": "aescrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -256,7 +256,7 @@
    "phone": "269-927-8777"
   },
   {
-   "id": "aescrima",
+   "id": "ascrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -1906,17 +1906,6 @@
    "phone": "(269) 927-4851"
   },
   {
-   "id": "5d372a8e2ca6df6890dae126",
-   "name": "Facilities Management, Safety & Security",
-   "title": "Facilities Management, Safety & Security",
-   "dept": "Facilities Management",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "S-104",
-   "email": "Facilities@lakemichigancollege.edu",
-   "phone": "269-927-8135"
-  },
-  {
    "id": "5d372a8e2ca6df6890dae129",
    "name": "Facilities Management, Safety & Security",
    "title": "Facilities Management, Safety & Security",
@@ -1926,6 +1915,17 @@
    "room": "S-111",
    "email": "abelden@lakemichigancollege.edu",
    "phone": "(269) 925-7846"
+  },
+  {
+   "id": "5d372a8e2ca6df6890dae126",
+   "name": "Facilities Management, Safety & Security",
+   "title": "Facilities Management, Safety & Security",
+   "dept": "Facilities Management",
+   "campus": "Benton Harbor Campus",
+   "building": "Main Building",
+   "room": "S-104",
+   "email": "Facilities@lakemichigancollege.edu",
+   "phone": "269-927-8135"
   },
   {
    "id": "fterris",
@@ -3809,17 +3809,6 @@
    "phone": "269-927-6715"
   },
   {
-   "id": "lritsema",
-   "name": "LuAnn Ritsema",
-   "title": "Adjunct Faculty, Dental Assisting",
-   "dept": "Health Sciences",
-   "campus": "",
-   "building": "",
-   "room": "",
-   "email": "lritsema@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
    "id": "lamado",
    "name": "Luis Amado",
    "title": "Faculty, Culinary Management",
@@ -5272,17 +5261,6 @@
    "phone": "269-927-8119"
   },
   {
-   "id": "sheigle",
-   "name": "Shannon Heigle",
-   "title": "Adjunct Faculty, Dental Assisting",
-   "dept": "Health Sciences",
-   "campus": "",
-   "building": "",
-   "room": "",
-   "email": "sheigle@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
    "id": "soliver",
    "name": "Shannon Oliver",
    "title": "Utility, Benton Harbor Campus",
@@ -6086,5 +6064,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-10-30T14:05:55.619Z"
+ "updated": "2026-10-31T13:37:44.460Z"
 }
