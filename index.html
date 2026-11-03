@@ -317,7 +317,9 @@ footer small{color:var(--muted);font-size:clamp(.85rem,1.1vw,1rem);max-width:40c
 .contact h2{margin:0;font-weight:900;font-size:clamp(1.8rem,3.2vw,3.2rem);line-height:1.05}
 .contact p{margin:1rem 0 0;font-size:clamp(1.15rem,1.8vw,1.7rem);line-height:1.35;font-weight:600}
 .contact .url{color:#55626F;font-size:clamp(1rem,1.4vw,1.3rem)}
-.contact .close{margin-top:1.6rem;border:3px solid #18212B;background:#18212B;color:#fff;border-radius:12px;padding:.8rem 1.8rem;font-size:clamp(1.1rem,1.7vw,1.5rem);font-weight:800}
+.contact .qrbtns{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.6rem}
+.contact .close,.contact .open{border:3px solid #18212B;background:#18212B;color:#fff;border-radius:12px;padding:.8rem 1.8rem;font-size:clamp(1.1rem,1.7vw,1.5rem);font-weight:800}
+.contact .open{border-color:var(--red);background:var(--red)}
 
 @media (prefers-reduced-motion:reduce){.caret,.a-start,.pin.target .ring{animation:none}}
 @media (max-width:760px){
@@ -1248,7 +1250,7 @@ function renderCalendar(){
 
 /* Auto-update: reload when index.html or data.js changes on the server */
 /* Kiosk version: update this and CHANGELOG.md with every release. */
-const KIOSK_VERSION = "2.9.1";
+const KIOSK_VERSION = "2.10.0";
 document.getElementById("kiosk-version").textContent = "v" + KIOSK_VERSION;
 const UPDATE_CHECK_MINUTES = 15;
 let updatePending = false, siteSig = null;
@@ -1289,13 +1291,13 @@ if (VIDEO_SRC){
 function playVideo(){ if (VIDEO_SRC && !videoPaused) vid.play().catch(() => {}); }
 function setVideoPaused(p){ videoPaused = p; $("#a-pause").textContent = p ? "Play video" : "Pause video"; if (p) vid.pause(); else playVideo(); }
 /* A pop-up QR code on the start screen, for the video's link and the partner link */
-function showQR(title, text, link){
+function showQR(title, text, link, openLabel){
   const svg = qrSVG(link, "QR code for " + link);
   if (!svg) return false;
   $("#contact").innerHTML = `<div class="card"><div class="qrbox">${svg}</div><div>
     <h2>${esc(title)}</h2><p>${esc(text)}</p>
     <p class="url">${esc(link.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "").replace(/\//g, "/\u200b"))}</p>
-    <button class="close" data-close>Close</button></div></div>`;
+    <div class="qrbtns">${openLabel ? `<button class="open" data-open>${esc(openLabel)}</button>` : ""}<button class="close" data-close>Close</button></div></div></div>`;
   $("#contact").classList.remove("hidden");
   return true;
 }
@@ -1309,6 +1311,20 @@ if (PARTNER_INFO){
   $("#a-partner").classList.remove("hidden");
 }
 const hideContact = () => $("#contact").classList.add("hidden");
+/* The partner's site opens in its own tab. The kiosk can't see what happens there,
+   so it closes that tab after PARTNER.minutes, bringing the welcome screen back. */
+let siteTab = null, siteTimer = null;
+function openSite(url){
+  closeSite();
+  try { siteTab = window.open(url, "kiosk-site"); } catch(_){ siteTab = null; }
+  const mins = PARTNER_INFO && +PARTNER_INFO.minutes > 0 ? +PARTNER_INFO.minutes : 5;
+  if (siteTab) siteTimer = setTimeout(closeSite, mins * 60 * 1000);
+}
+function closeSite(){
+  clearTimeout(siteTimer); siteTimer = null;
+  try { if (siteTab && !siteTab.closed) siteTab.close(); } catch(_){}
+  siteTab = null;
+}
 function showAttract(){ hideContact(); $("#attract").classList.remove("hidden"); playVideo(); }
 /* Touches act on release (click), so the touch that closes the start screen ends here
    and can't land on the home screen underneath. Any stray click right after is ignored. */
@@ -1320,9 +1336,13 @@ document.addEventListener("click", e => {
 $("#attract").addEventListener("click", e => {
   e.preventDefault();
   if (e.target.closest("#a-pause")){ setVideoPaused(!videoPaused); return; }
-  if (e.target.closest("#contact")){ if (e.target.closest("[data-close]") || !e.target.closest(".card")) hideContact(); return; }
+  if (e.target.closest("#contact")){
+    if (e.target.closest("[data-open]") && PARTNER_INFO){ hideContact(); openSite(PARTNER_INFO.url); return; }
+    if (e.target.closest("[data-close]") || !e.target.closest(".card")) hideContact();
+    return;
+  }
   if (e.target.closest("#a-video") && showContact()) return;
-  if (e.target.closest("#a-partner") && PARTNER_INFO && showQR(PARTNER_INFO.name || "Website", "Scan with your phone camera to visit their website.", PARTNER_INFO.url)) return;
+  if (e.target.closest("#a-partner") && PARTNER_INFO && showQR(PARTNER_INFO.name || "Website", "Scan with your phone camera to visit their website, or open it here.", PARTNER_INFO.url, "Open website")) return;
   hideAttract(); resetIdle();
 });
 playVideo();

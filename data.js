@@ -79,13 +79,15 @@ const ATTRACT_VIDEO = "media/LMC_CWE_Programs_Display_1080p_v2.mp4";
 const VIDEO_LINK = "https://www.lakemichigancollege.edu/contact-us";
 const VIDEO_LINK_TITLE = "Questions about our programs?";
 
-/* Partner button on the start screen. Touching it shows a QR code for url.
-   Set to null to remove it. */
+/* Partner button on the start screen. Touching it shows a QR code for url and an
+   Open website button. The website opens in a new tab, which the kiosk closes after
+   "minutes" so the board returns to the welcome screen. Set to null to remove it. */
 const PARTNER = {
   name: "Berrien Talent Collaborative",
   logo: "media/berrien-talent-collaborative.png",
   text: "Visit the Berrien Talent Collaborative online.",
-  url: "https://berrientalent.org/"
+  url: "https://berrientalent.org/",
+  minutes: 5
 };
 
 /* ---------- Directions to other buildings ----------

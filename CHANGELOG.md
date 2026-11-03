@@ -8,6 +8,9 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.10.0 (2026-11-03)
+- The Berrien Talent Collaborative pop-up has an Open website button next to Close; the site opens in a new tab, which the kiosk closes after 5 minutes (`minutes` in `PARTNER`, `data.js`)
+
 ## v2.9.1 (2026-11-03)
 - Fixed: the kiosk always loads a fresh `data.js`, so new settings (like the partner button) show up right away instead of after the browser's saved copy expires
 
