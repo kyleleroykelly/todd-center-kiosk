@@ -79,6 +79,15 @@ const ATTRACT_VIDEO = "media/LMC_CWE_Programs_Display_1080p_v2.mp4";
 const VIDEO_LINK = "https://www.lakemichigancollege.edu/contact-us";
 const VIDEO_LINK_TITLE = "Questions about our programs?";
 
+/* Partner button on the start screen. Touching it shows a QR code for url.
+   Set to null to remove it. */
+const PARTNER = {
+  name: "Berrien Talent Collaborative",
+  logo: "media/berrien-talent-collaborative.png",
+  text: "Visit the Berrien Talent Collaborative online.",
+  url: "https://berrientalent.org/"
+};
+
 /* ---------- Directions to other buildings ----------
    Shown for people, offices, and maps in that building.
    text:  how to get there from the Todd Center

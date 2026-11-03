@@ -8,6 +8,11 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.9.0 (2026-11-03)
+- Start screen redesign: "Welcome to the Todd Center" banner across the top with the clock, a larger video on the left, and the start button on the right
+- Berrien Talent Collaborative button on the start screen; touching it shows a QR code for berrientalent.org (`PARTNER` in `data.js`, logo in `media/`)
+- Fixed: touching the start screen no longer also touches the home screen button underneath it
+
 ## v2.8.0 (2026-10-15)
 - Full screen by default: the kiosk hides the browser bars on the first touch, and again after a reload (`KIOSK_FULLSCREEN` in `data.js`)
 - Web app manifest and icons, so the kiosk can be added to the board's home screen and open full screen

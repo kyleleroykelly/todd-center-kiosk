@@ -37,7 +37,7 @@ Current version: see `CHANGELOG.md` (also shown in the kiosk footer).
 | `maps/` | Floor plans and room positions for the Main Building, Hanson, Welch, and South Haven | Only if building plans change |
 | `fonts/` | The Overpass font (SIL Open Font License, see `fonts/OFL.txt`) | No |
 | `manifest.webmanifest`, `icons/` | Lets the kiosk be added to the board's home screen as a full-screen app | No |
-| `media/` | The start screen video (set in `data.js` as `ATTRACT_VIDEO`) | To change the video, upload one with a new file name and update `data.js` |
+| `media/` | The start screen video (`ATTRACT_VIDEO` in `data.js`) and the partner logo (`PARTNER`) | To change the video, upload one with a new file name and update `data.js` |
 | `lib/qrcode.js` | QR code maker used for the directions codes (MIT license, by Kazuhiko Arase) | No |
 | `qr-space-use.svg` | QR code for the space request page, shown when there are no events | Only if the link changes (make a new QR code with the same file name) |
 | `floor-ground.jpg`, `floor-second.jpg` | Todd Center floor plans | Only if building plans change |
