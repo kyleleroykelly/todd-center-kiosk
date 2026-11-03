@@ -429,7 +429,10 @@ footer small{color:var(--muted);font-size:clamp(.85rem,1.1vw,1rem);max-width:40c
   <div class="contact hidden" id="contact"></div>
 </div>
 
-<script src="data.js"></script>
+<script>
+/* Load data.js fresh every time, so an edit (or a new kiosk version) never runs with an old saved copy. */
+document.write('<script src="data.js?_=' + Date.now() + '"><\/script>');
+</script>
 <script src="lib/qrcode.js"></script>
 <script>
 if (typeof PLACES === "undefined" || typeof ROOMS === "undefined" || typeof DIRECTORY_FIX === "undefined"){
@@ -1245,7 +1248,7 @@ function renderCalendar(){
 
 /* Auto-update: reload when index.html or data.js changes on the server */
 /* Kiosk version: update this and CHANGELOG.md with every release. */
-const KIOSK_VERSION = "2.9.0";
+const KIOSK_VERSION = "2.9.1";
 document.getElementById("kiosk-version").textContent = "v" + KIOSK_VERSION;
 const UPDATE_CHECK_MINUTES = 15;
 let updatePending = false, siteSig = null;

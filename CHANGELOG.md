@@ -8,6 +8,9 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.9.1 (2026-11-03)
+- Fixed: the kiosk always loads a fresh `data.js`, so new settings (like the partner button) show up right away instead of after the browser's saved copy expires
+
 ## v2.9.0 (2026-11-03)
 - Start screen redesign: "Welcome to the Todd Center" banner across the top with the clock, a larger video on the left, and the start button on the right
 - Berrien Talent Collaborative button on the start screen; touching it shows a QR code for berrientalent.org (`PARTNER` in `data.js`, logo in `media/`)
