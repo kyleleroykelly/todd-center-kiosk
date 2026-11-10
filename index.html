@@ -155,13 +155,12 @@ main{overflow:hidden;position:relative}
 @keyframes ring{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.7);opacity:0}}
 .pin .lbl{position:absolute;left:50%;bottom:calc(100% + 12px);transform:translateX(-50%);white-space:nowrap;background:#A8192C;color:#fff;font-weight:900;font-size:clamp(.95rem,1.5vw,1.35rem);padding:.25em .65em;border-radius:8px}
 .pin.target.right .lbl{left:auto;right:-6px;transform:none}
-.pin.yah .star{display:block;width:clamp(30px,3vw,44px);height:clamp(30px,3vw,44px);color:#1F5FB8;filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff)}
-.pin.yah .lbl{background:#1F5FB8}
-/* On the turned Todd Center plan the stairs are right above the star, so the label goes to its left */
-.pin.yah.side .lbl{left:auto;right:calc(100% + 10px);bottom:auto;top:50%;transform:translateY(-50%)}
+.pin.yah .star{display:block;width:clamp(34px,3.2vw,48px);height:clamp(34px,3.2vw,48px);color:#1F5FB8;filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff)}
 .pin.elev .lbl{position:static;transform:none;display:inline-block;background:#22303E;font-size:clamp(.8rem,1.1vw,1rem)}
 .maplegend{display:flex;gap:1.4rem;flex-wrap:wrap;padding:.6rem 1rem;border-top:3px solid #D5DBE0;color:#3A4652;font-size:clamp(.85rem,1.15vw,1.05rem);font-weight:600}
 .maplegend i{display:inline-block;width:.9em;height:.9em;border-radius:3px;vertical-align:-.1em;margin-right:.4em}
+.maplegend .yahkey{display:inline-flex;align-items:center;gap:.35em;color:#1F5FB8;font-weight:800}
+.maplegend .yahkey svg{width:1.5em;height:1.5em}
 .mapx{flex:none;border:0;background:#A8192C;color:#fff;font-weight:800;font-size:clamp(1.05rem,1.6vw,1.45rem);padding:.85rem 1.4rem;display:flex;align-items:center;gap:.55rem}
 .mapx svg{width:1.1em;height:1.1em}
 .mapstage{cursor:zoom-in}
@@ -707,7 +706,7 @@ function mapHTML(bkey, floor, target, targetLabel, noElev){
     if (e) pins += `<div class="pin elev" style="${pinStyle(B, e, inv)}"><span class="lbl">Elevator</span></div>`;
   }
   if (isTodd && YOU_ARE_HERE.floor === fl.n){
-    pins += `<div class="pin yah${B.turned ? " side" : ""}" style="${pinStyle(B, YOU_ARE_HERE, inv)}">${STAR}<span class="lbl">${esc(YOU_ARE_HERE.label)}</span></div>`;
+    pins += `<div class="pin yah" style="${pinStyle(B, YOU_ARE_HERE, inv)}" aria-label="${esc(YOU_ARE_HERE.label)}">${STAR}</div>`;   // named in the legend
   }
   let origin = "50% 50%";
   if (target && tFloor === fl.n){
@@ -723,7 +722,7 @@ function mapHTML(bkey, floor, target, targetLabel, noElev){
     : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
   const zoomBtn = (target && tFloor === fl.n) ? `<button class="mapz" id="mapz">${current.zoom > 1 ? "Zoom out" : "Zoom in"}</button>` : "";
   const legend = isTodd
-    ? `<span><i style="background:#A8192C"></i>Destination</span><span><i style="background:#1F5FB8"></i>You are here</span><span><i style="background:#F4B6B6"></i>Severe weather shelter</span>`
+    ? `<span><i style="background:#A8192C"></i>Destination</span><span class="yahkey">${STAR}${esc(YOU_ARE_HERE.label)}</span><span><i style="background:#F4B6B6"></i>Severe weather shelter</span>`
     : `<span><i style="background:#A8192C"></i>Destination</span><span><i style="background:#F4B6B6"></i>Severe weather shelter</span><span>${esc(B.name)}</span>`;
   return `<div class="mapcard${full ? " full" : ""}">
     <div class="floortabs">${tabs}${zoomBtn}<button class="mapx" id="mapx">${icon}${full ? "Close map" : "Full screen"}</button></div>
@@ -1286,7 +1285,7 @@ function renderCalendar(){
 
 /* Auto-update: reload when index.html or data.js changes on the server */
 /* Kiosk version: update this and CHANGELOG.md with every release. */
-const KIOSK_VERSION = "2.13.3";
+const KIOSK_VERSION = "2.13.4";
 document.getElementById("kiosk-version").textContent = "v" + KIOSK_VERSION;
 if (typeof FOOTER_HELP === "string") document.getElementById("help-text").textContent = FOOTER_HELP;
 const UPDATE_CHECK_MINUTES = 15;
