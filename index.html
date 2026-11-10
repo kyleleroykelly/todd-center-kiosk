@@ -155,7 +155,7 @@ main{overflow:hidden;position:relative}
 @keyframes ring{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.7);opacity:0}}
 .pin .lbl{position:absolute;left:50%;bottom:calc(100% + 12px);transform:translateX(-50%);white-space:nowrap;background:#A8192C;color:#fff;font-weight:900;font-size:clamp(.95rem,1.5vw,1.35rem);padding:.25em .65em;border-radius:8px}
 .pin.target.right .lbl{left:auto;right:-6px;transform:none}
-.pin.yah .star{display:block;width:clamp(34px,3.2vw,48px);height:clamp(34px,3.2vw,48px);color:#1F5FB8;filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff)}
+.pin.yah .star{display:block;width:clamp(18px,1.4vw,26px);height:clamp(18px,1.4vw,26px);color:#1F5FB8;filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff)}
 .pin.elev .lbl{position:static;transform:none;display:inline-block;background:#22303E;font-size:clamp(.8rem,1.1vw,1rem)}
 .maplegend{display:flex;gap:1.4rem;flex-wrap:wrap;padding:.6rem 1rem;border-top:3px solid #D5DBE0;color:#3A4652;font-size:clamp(.85rem,1.15vw,1.05rem);font-weight:600}
 .maplegend i{display:inline-block;width:.9em;height:.9em;border-radius:3px;vertical-align:-.1em;margin-right:.4em}
@@ -168,6 +168,7 @@ main{overflow:hidden;position:relative}
 .mapcard.full .mapstage{cursor:default}
 .mapcard.full .ft,.mapcard.full .mapx{font-size:clamp(1.3rem,2vw,1.9rem);padding:1.1rem 1.6rem}
 .mapcard.full .pin .lbl{font-size:clamp(1.2rem,2vw,1.9rem)}
+.mapcard.full .pin.yah .star{width:clamp(24px,2vw,36px);height:clamp(24px,2vw,36px)}
 .mapcard.full .pin.target .dot{width:clamp(36px,3.4vw,56px);height:clamp(36px,3.4vw,56px)}
 .mapcard.full .maplegend{font-size:clamp(1rem,1.4vw,1.3rem)}
 
@@ -1285,7 +1286,7 @@ function renderCalendar(){
 
 /* Auto-update: reload when index.html or data.js changes on the server */
 /* Kiosk version: update this and CHANGELOG.md with every release. */
-const KIOSK_VERSION = "2.13.4";
+const KIOSK_VERSION = "2.13.5";
 document.getElementById("kiosk-version").textContent = "v" + KIOSK_VERSION;
 if (typeof FOOTER_HELP === "string") document.getElementById("help-text").textContent = FOOTER_HELP;
 const UPDATE_CHECK_MINUTES = 15;

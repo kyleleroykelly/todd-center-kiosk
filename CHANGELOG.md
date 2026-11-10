@@ -8,6 +8,9 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.13.5 (2026-11-10)
+- The "You are here" star is smaller and sits at the top of the grey lobby circle, above the LMC logo
+
 ## v2.13.4 (2026-11-10)
 - "You are here" is no longer written on the map: the blue star marks the spot, and the legend under the map shows the star with "You are here"
 

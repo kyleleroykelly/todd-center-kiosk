@@ -108,7 +108,7 @@ const BUILDING_DIRECTIONS = {
    from the Todd Center emergency plan. YOU_ARE_HERE marks the
    kiosk; move it if the board is not in the main lobby.
    --------------------------------------------------------- */
-const YOU_ARE_HERE = {floor:1, x:77.3, y:44.0, label:"You are here"};
+const YOU_ARE_HERE = {floor:1, x:73.0, y:43.8, label:"You are here"};   // top of the grey lobby circle, above the LMC logo
 const PLAN_CROP = {x0:2, x1:99, y0:2.5, y1:84};
 /* true: show the Todd Center plans turned 90 degrees to the right, to match the way
    people face the board. Positions above stay as measured on the printed plan. */
