@@ -8,6 +8,10 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.13.2 (2026-11-10)
+- Ground floor plan: added a stair arrow on the curved staircase showing people go up on the left side (the plan had none before)
+- On the turned Todd Center map, the "You are here" label sits to the left of the star so it no longer covers the staircase
+
 ## v2.13.1 (2026-11-10)
 - Second floor plan: the stair arrow on the curved staircase now runs up the left side, where people go up the stairs
 

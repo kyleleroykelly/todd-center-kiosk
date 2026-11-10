@@ -157,6 +157,8 @@ main{overflow:hidden;position:relative}
 .pin.target.right .lbl{left:auto;right:-6px;transform:none}
 .pin.yah .star{display:block;width:clamp(30px,3vw,44px);height:clamp(30px,3vw,44px);color:#1F5FB8;filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff)}
 .pin.yah .lbl{background:#1F5FB8}
+/* On the turned Todd Center plan the stairs are right above the star, so the label goes to its left */
+.pin.yah.side .lbl{left:auto;right:calc(100% + 10px);bottom:auto;top:50%;transform:translateY(-50%)}
 .pin.elev .lbl{position:static;transform:none;display:inline-block;background:#22303E;font-size:clamp(.8rem,1.1vw,1rem)}
 .maplegend{display:flex;gap:1.4rem;flex-wrap:wrap;padding:.6rem 1rem;border-top:3px solid #D5DBE0;color:#3A4652;font-size:clamp(.85rem,1.15vw,1.05rem);font-weight:600}
 .maplegend i{display:inline-block;width:.9em;height:.9em;border-radius:3px;vertical-align:-.1em;margin-right:.4em}
@@ -705,7 +707,7 @@ function mapHTML(bkey, floor, target, targetLabel, noElev){
     if (e) pins += `<div class="pin elev" style="${pinStyle(B, e, inv)}"><span class="lbl">Elevator</span></div>`;
   }
   if (isTodd && YOU_ARE_HERE.floor === fl.n){
-    pins += `<div class="pin yah" style="${pinStyle(B, YOU_ARE_HERE, inv)}">${STAR}<span class="lbl">${esc(YOU_ARE_HERE.label)}</span></div>`;
+    pins += `<div class="pin yah${B.turned ? " side" : ""}" style="${pinStyle(B, YOU_ARE_HERE, inv)}">${STAR}<span class="lbl">${esc(YOU_ARE_HERE.label)}</span></div>`;
   }
   let origin = "50% 50%";
   if (target && tFloor === fl.n){
@@ -1284,7 +1286,7 @@ function renderCalendar(){
 
 /* Auto-update: reload when index.html or data.js changes on the server */
 /* Kiosk version: update this and CHANGELOG.md with every release. */
-const KIOSK_VERSION = "2.13.1";
+const KIOSK_VERSION = "2.13.2";
 document.getElementById("kiosk-version").textContent = "v" + KIOSK_VERSION;
 const UPDATE_CHECK_MINUTES = 15;
 let updatePending = false, siteSig = null;
