@@ -289,24 +289,28 @@ footer small{color:var(--muted);font-size:clamp(.85rem,1.1vw,1rem);max-width:40c
 .a-banner p{margin:.5rem 0 0;font-size:clamp(1.05rem,1.5vw,1.5rem);font-weight:600;opacity:.85}
 .clockA{flex:none;text-align:right;font-weight:800;font-size:clamp(1.6rem,2.8vw,2.8rem);font-variant-numeric:tabular-nums}
 .clockA small{display:block;font-weight:600;font-size:.5em;opacity:.8;margin-top:.4rem}
-.a-body{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:clamp(2rem,3.5vw,4rem);padding:clamp(1.5rem,3vh,3rem) clamp(2rem,4vw,4rem);min-height:0}
-.attract.has-video .a-body{grid-template-columns:minmax(0,1.85fr) minmax(0,1fr)}
+.a-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:stretch;gap:clamp(1.5rem,3vw,3.5rem);padding:clamp(1.2rem,2.6vh,2.4rem) clamp(2rem,4vw,4rem);min-height:0}
+.a-left{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(1rem,2.4vh,2rem);min-height:0}
+.a-media{width:100%;max-width:calc((100vh - 24rem) * 16 / 9)}   /* keeps room for the button below */
 .a-media{display:none;flex-direction:column;gap:.8rem;min-height:0}
 .attract.has-video .a-media{display:flex}
-.a-video{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:16/9;max-height:calc(100vh - 19rem);box-shadow:0 10px 40px rgba(0,0,0,.35);cursor:pointer}
+.a-video{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:16/9;box-shadow:0 10px 40px rgba(0,0,0,.35);cursor:pointer}
 .a-video video{display:block;width:100%;height:100%;object-fit:contain}
 .a-hint{display:inline-flex;align-items:center;gap:.6rem;font-size:clamp(1rem,1.4vw,1.35rem);font-weight:700;opacity:.9}
 .a-hint svg{width:1.3em;height:1.3em}
 .a-pause{position:absolute;right:.8rem;bottom:.8rem;border:0;border-radius:999px;background:rgba(0,0,0,.65);color:#fff;font-weight:800;font-size:clamp(.95rem,1.2vw,1.15rem);padding:.5rem 1rem}
-.a-side{display:flex;flex-direction:column;gap:clamp(1.5rem,3vh,2.5rem)}
-.a-side h2{margin:0;font-weight:900;font-size:clamp(1.8rem,3vw,3.2rem);line-height:1.1}
-.a-start{align-self:flex-start;display:inline-flex;align-items:center;gap:.8rem;border:0;border-radius:999px;background:var(--red);color:#fff;
-  font-size:clamp(1.3rem,2.2vw,2.2rem);font-weight:900;padding:1rem 2.2rem;box-shadow:0 6px 24px rgba(0,0,0,.3);animation:pulse 2.4s ease-in-out infinite}
+.a-side{display:flex;flex-direction:column;gap:clamp(1rem,2vh,1.6rem);min-height:0}
+.a-events{flex:1;color:var(--ink)}
+.a-events .ev-promo{margin-top:0}
+.a-events .ev-promo p{display:none}
+.a-start{display:inline-flex;align-items:center;gap:.8rem;border:0;border-radius:999px;background:var(--red);color:#fff;
+  font-size:clamp(1.3rem,2.1vw,2.1rem);font-weight:900;padding:1rem 2.2rem;box-shadow:0 6px 24px rgba(0,0,0,.3);animation:pulse 2.4s ease-in-out infinite}
 .a-start svg{width:1.1em;height:1.1em}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 .a-partner{display:flex;align-items:center;gap:clamp(1rem,2vw,1.8rem);text-align:left;color:inherit;background:rgba(255,255,255,.06);
   border:3px solid rgba(255,255,255,.25);border-radius:16px;padding:clamp(1rem,1.8vw,1.6rem)}
-.a-partner img{flex:none;height:clamp(150px,22vh,250px);width:auto}
+.a-partner{flex:none}
+.a-partner img{flex:none;height:clamp(100px,14vh,160px);width:auto}
 .a-partner b{display:block;font-size:clamp(1.15rem,1.6vw,1.6rem);font-weight:800;line-height:1.25}
 .a-partner span{display:inline-flex;align-items:center;gap:.5rem;margin-top:.7rem;font-size:clamp(.95rem,1.3vw,1.25rem);font-weight:700;opacity:.85}
 .a-partner span svg{width:1.3em;height:1.3em}
@@ -403,6 +407,7 @@ footer small{color:var(--muted);font-size:clamp(.85rem,1.1vw,1rem);max-width:40c
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>Back
       </button>
       <button class="nb solid" id="home">Home</button>
+      <button class="nb" id="welcome">Welcome screen</button>
     </div>
     <small>From the LMC employee directory. For help, visit Career &amp; Workforce Education in TC-1215. <span id="kiosk-version"></span></small>
   </footer>
@@ -414,17 +419,24 @@ footer small{color:var(--muted);font-size:clamp(.85rem,1.1vw,1rem);max-width:40c
     <div class="clockA"><span id="timeA"></span><small id="dateA"></small></div>
   </div>
   <div class="a-body">
-    <div class="a-media">
-      <div class="a-video" id="a-video" role="button" aria-label="Programs video. Touch for a QR code to contact Lake Michigan College.">
-        <video id="video" muted loop playsinline preload="auto" aria-hidden="true"></video>
-        <button class="a-pause" id="a-pause">Pause video</button>
+    <div class="a-left">
+      <div class="a-media">
+        <div class="a-video" id="a-video" role="button" aria-label="Programs video. Touch for a QR code to contact Lake Michigan College.">
+          <video id="video" muted loop playsinline preload="auto" aria-hidden="true"></video>
+          <button class="a-pause" id="a-pause">Pause video</button>
+        </div>
+        <span class="a-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>Touch the video to contact us</span>
       </div>
-      <span class="a-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>Touch the video to contact us</span>
+      <button class="a-start" id="a-start">Touch here to search people or places
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
     <div class="a-side">
-      <h2>Find a classroom, office, or instructor.</h2>
-      <button class="a-start" id="a-start">Touch here to start
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <div class="events-panel a-events" aria-label="Today's events">
+        <div class="ev-head"><h2>Today's events</h2></div>
+        <div class="ev-list" id="a-events"></div>
+        <button class="ev-more" data-cal>See upcoming events
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
       <button class="a-partner hidden" id="a-partner"></button>
     </div>
   </div>
@@ -955,6 +967,7 @@ document.querySelectorAll("[data-place]").forEach(b => b.addEventListener("click
 }));
 $("#back").addEventListener("click", back);
 $("#home").addEventListener("click", goHome);
+$("#welcome").addEventListener("click", () => { goHome(); setVideoPaused(false); showAttract(); });
 loadBuildings().then(() => { if (current && (current.view === "detail" || current.view === "map")) render(); });
 loadDirectory();
 setInterval(loadDirectory, 60 * 60 * 1000);
@@ -1050,9 +1063,18 @@ function roomFromLocation(loc){
   return m && ROOMS[m[1]] ? m[1] : null;
 }
 
+/* Today's events from events.json, or from upcoming.json if the half-hourly update
+   hasn't run yet today (GitHub runs scheduled updates late, sometimes by hours). */
+function todayAll(){
+  const key = dayKey(new Date());
+  if (EVENTS_CSV_URL) return {covered: true, list: EVENTS.filter(e => e.date === new Date().toDateString())};
+  if (calendarDates.includes(key)) return {covered: true, list: EVENTS.filter(e => evKey(e) === key)};
+  if (upcomingDates.includes(key)) return {covered: true, list: UPCOMING.filter(e => e.key === key)};
+  return {covered: false, list: []};
+}
 function todaysEvents(){
-  const now = new Date(), today = now.toDateString(), mins = now.getHours()*60 + now.getMinutes();
-  return EVENTS.filter(e => e.date === today)
+  const now = new Date(), mins = now.getHours()*60 + now.getMinutes();
+  return todayAll().list
     .filter(e => e.end == null ? (e.start == null || e.start + 60 > mins) : e.end > mins)
     .sort((a,b) => (a.start ?? -1) - (b.start ?? -1))
     .map(e => ({...e, now: e.start != null && e.start <= mins}));
@@ -1087,11 +1109,9 @@ function bindEventRows(box, list){
 function renderEvents(){
   const box = $("#events"); if (!box) return;
   const list = todaysEvents();
-  const todayKey = new Date().toLocaleDateString("en-CA");
-  const today = EVENTS.filter(e => e.date === new Date().toDateString()).length;
-  const covered = EVENTS_CSV_URL || calendarDates.includes(todayKey);
+  const {covered, list: all} = todayAll(), today = all.length;
   let h = "";
-  if (!eventsLoaded || !covered){
+  if (!covered){
     h = `<div class="ev-empty">${eventsLoaded || eventsError ? "Today's events aren't available right now." : "Loading today's events..."}</div>`;
   } else if (!list.length){
     h = `<div class="ev-empty">${today ? "That's all for today." : "No events are scheduled in the Todd Center today."}</div>${SPACE_PROMO}`;
@@ -1100,6 +1120,8 @@ function renderEvents(){
   }
   box.innerHTML = h;
   bindEventRows(box, list);
+  const wb = $("#a-events");   // the same list on the welcome screen
+  if (wb){ wb.innerHTML = h; bindEventRows(wb, list); }
   const st = $("#events-status");
   if (st) st.textContent = eventsError && eventsLoaded ? "Showing the last saved list" : "";
 }
@@ -1173,6 +1195,7 @@ async function loadUpcoming(){
       try { const c = JSON.parse(localStorage.getItem("toddKioskUpcoming") || "null"); if (c){ UPCOMING = c.events || []; upcomingDates = c.dates || []; } } catch(_){}
     }
   }
+  renderEvents();
   if (current && current.view === "calendar") render();
 }
 loadUpcoming();
@@ -1250,7 +1273,7 @@ function renderCalendar(){
 
 /* Auto-update: reload when index.html or data.js changes on the server */
 /* Kiosk version: update this and CHANGELOG.md with every release. */
-const KIOSK_VERSION = "2.10.0";
+const KIOSK_VERSION = "2.11.0";
 document.getElementById("kiosk-version").textContent = "v" + KIOSK_VERSION;
 const UPDATE_CHECK_MINUTES = 15;
 let updatePending = false, siteSig = null;
@@ -1342,6 +1365,12 @@ $("#attract").addEventListener("click", e => {
     return;
   }
   if (e.target.closest("#a-video") && showContact()) return;
+  if (e.target.closest(".a-events")){
+    // An event with a room has already opened its map; "See upcoming events" opens the calendar.
+    if (e.target.closest("[data-cal]")){ hideAttract(); resetIdle(); go({view:"calendar"}); }
+    else if (e.target.closest(".ev:not(.noroom)")){ hideAttract(); resetIdle(); }
+    return;
+  }
   if (e.target.closest("#a-partner") && PARTNER_INFO && showQR(PARTNER_INFO.name || "Website", "Scan with your phone camera to visit their website, or open it here.", PARTNER_INFO.url, "Open website")) return;
   hideAttract(); resetIdle();
 });

@@ -8,6 +8,11 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.11.0 (2026-11-10)
+- Welcome screen redesign: smaller video at the top left with a "Touch here to search people or places" button under it; Today's events on the right above the Berrien Talent Collaborative box, with the space request QR code and a See upcoming events button
+- Welcome screen button in the footer returns to the welcome screen
+- Today's events fall back to the nightly upcoming events data when the half-hourly update is late
+
 ## v2.10.0 (2026-11-03)
 - The Berrien Talent Collaborative pop-up has an Open website button next to Close; the site opens in a new tab, which the kiosk closes after 5 minutes (`minutes` in `PARTNER`, `data.js`)
 
