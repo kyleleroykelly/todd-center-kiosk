@@ -8,6 +8,9 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.13.1 (2026-11-10)
+- Second floor plan: the stair arrow on the curved staircase now runs up the left side, where people go up the stairs
+
 ## v2.13.0 (2026-11-10)
 - Todd Center floor maps are turned 90 degrees to the right, to match the way people face the board (`TODD_MAP_TURNED` in `data.js`; turned plans are `floor-ground-turned.jpg` and `floor-second-turned.jpg`)
 
