@@ -411,7 +411,7 @@ footer small{color:var(--muted);font-size:clamp(.85rem,1.1vw,1rem);max-width:40c
       <button class="nb solid" id="home">Home</button>
       <button class="nb" id="welcome">Welcome screen</button>
     </div>
-    <small>From the LMC employee directory. For help, visit Career &amp; Workforce Education in TC-1215. <span id="kiosk-version"></span></small>
+    <small><span id="help-text">For help, visit the administrative office on your left.</span> <span id="kiosk-version"></span></small>
   </footer>
 </div>
 
@@ -1286,8 +1286,9 @@ function renderCalendar(){
 
 /* Auto-update: reload when index.html or data.js changes on the server */
 /* Kiosk version: update this and CHANGELOG.md with every release. */
-const KIOSK_VERSION = "2.13.2";
+const KIOSK_VERSION = "2.13.3";
 document.getElementById("kiosk-version").textContent = "v" + KIOSK_VERSION;
+if (typeof FOOTER_HELP === "string") document.getElementById("help-text").textContent = FOOTER_HELP;
 const UPDATE_CHECK_MINUTES = 15;
 let updatePending = false, siteSig = null;
 function hashText(t){ let h = 5381; for (let i = 0; i < t.length; i++) h = ((h << 5) + h + t.charCodeAt(i)) | 0; return h + ":" + t.length; }

@@ -22,6 +22,8 @@ const IDLE_SECONDS = 90;
    and again after any reload. Set to false when testing on a laptop. */
 const KIOSK_FULLSCREEN = true;
 const HELP_DESK = "TC-1215";
+/* The help line at the bottom of every screen. */
+const FOOTER_HELP = "For help, visit the administrative office on your left.";
 
 /* ---------- Directory ----------
    People and offices come from the LMC website directory automatically
