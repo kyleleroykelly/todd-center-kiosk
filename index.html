@@ -307,13 +307,14 @@ footer small{color:var(--muted);font-size:clamp(.85rem,1.1vw,1rem);max-width:40c
   font-size:clamp(1.3rem,2.1vw,2.1rem);font-weight:900;padding:1rem 2.2rem;box-shadow:0 6px 24px rgba(0,0,0,.3);animation:pulse 2.4s ease-in-out infinite}
 .a-start svg{width:1.1em;height:1.1em}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
-.a-partner{display:flex;align-items:center;gap:clamp(1rem,2vw,1.8rem);text-align:left;color:inherit;background:rgba(255,255,255,.06);
-  border:3px solid rgba(255,255,255,.25);border-radius:16px;padding:clamp(1rem,1.8vw,1.6rem)}
-.a-partner{flex:none}
+.a-partner{flex:none;display:flex;align-items:center;gap:clamp(1rem,1.8vw,1.6rem);background:rgba(255,255,255,.06);
+  border:3px solid rgba(255,255,255,.25);border-radius:16px;padding:clamp(.9rem,1.6vw,1.4rem)}
 .a-partner img{flex:none;height:clamp(100px,14vh,160px);width:auto}
-.a-partner b{display:block;font-size:clamp(1.15rem,1.6vw,1.6rem);font-weight:800;line-height:1.25}
-.a-partner span{display:inline-flex;align-items:center;gap:.5rem;margin-top:.7rem;font-size:clamp(.95rem,1.3vw,1.25rem);font-weight:700;opacity:.85}
-.a-partner span svg{width:1.3em;height:1.3em}
+.a-partner .txt{flex:1;min-width:0}
+.a-partner b{display:block;font-size:clamp(1.1rem,1.5vw,1.5rem);font-weight:800;line-height:1.25}
+.a-partner .txt span{display:block;margin-top:.5rem;font-size:clamp(.95rem,1.25vw,1.2rem);font-weight:600;opacity:.85;line-height:1.3}
+.a-partner .qrbox{flex:none;width:clamp(100px,14vh,160px);background:#fff;border-radius:8px;line-height:0}
+.a-partner .qrbox svg{width:100%;height:auto}
 .contact{position:absolute;inset:0;z-index:5;background:rgba(10,15,20,.7);display:flex;align-items:center;justify-content:center;padding:2rem}
 .contact .card{background:#fff;color:#18212B;border-radius:18px;border-top:12px solid var(--red);padding:clamp(1.5rem,3vw,3rem);display:flex;gap:clamp(1.5rem,3vw,3rem);align-items:center;max-width:min(1100px,92vw)}
 .contact .qrbox{flex:none;width:clamp(200px,18vw,340px);line-height:0}
@@ -322,8 +323,7 @@ footer small{color:var(--muted);font-size:clamp(.85rem,1.1vw,1rem);max-width:40c
 .contact p{margin:1rem 0 0;font-size:clamp(1.15rem,1.8vw,1.7rem);line-height:1.35;font-weight:600}
 .contact .url{color:#55626F;font-size:clamp(1rem,1.4vw,1.3rem)}
 .contact .qrbtns{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.6rem}
-.contact .close,.contact .open{border:3px solid #18212B;background:#18212B;color:#fff;border-radius:12px;padding:.8rem 1.8rem;font-size:clamp(1.1rem,1.7vw,1.5rem);font-weight:800}
-.contact .open{border-color:var(--red);background:var(--red)}
+.contact .close{border:3px solid #18212B;background:#18212B;color:#fff;border-radius:12px;padding:.8rem 1.8rem;font-size:clamp(1.1rem,1.7vw,1.5rem);font-weight:800}
 
 @media (prefers-reduced-motion:reduce){.caret,.a-start,.pin.target .ring{animation:none}}
 @media (max-width:760px){
@@ -437,7 +437,7 @@ footer small{color:var(--muted);font-size:clamp(.85rem,1.1vw,1rem);max-width:40c
         <button class="ev-more" data-cal>See upcoming events
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
-      <button class="a-partner hidden" id="a-partner"></button>
+      <div class="a-partner hidden" id="a-partner"></div>
     </div>
   </div>
   <div class="contact hidden" id="contact"></div>
@@ -1273,7 +1273,7 @@ function renderCalendar(){
 
 /* Auto-update: reload when index.html or data.js changes on the server */
 /* Kiosk version: update this and CHANGELOG.md with every release. */
-const KIOSK_VERSION = "2.11.0";
+const KIOSK_VERSION = "2.12.0";
 document.getElementById("kiosk-version").textContent = "v" + KIOSK_VERSION;
 const UPDATE_CHECK_MINUTES = 15;
 let updatePending = false, siteSig = null;
@@ -1314,40 +1314,28 @@ if (VIDEO_SRC){
 function playVideo(){ if (VIDEO_SRC && !videoPaused) vid.play().catch(() => {}); }
 function setVideoPaused(p){ videoPaused = p; $("#a-pause").textContent = p ? "Play video" : "Pause video"; if (p) vid.pause(); else playVideo(); }
 /* A pop-up QR code on the start screen, for the video's link and the partner link */
-function showQR(title, text, link, openLabel){
+function showQR(title, text, link){
   const svg = qrSVG(link, "QR code for " + link);
   if (!svg) return false;
   $("#contact").innerHTML = `<div class="card"><div class="qrbox">${svg}</div><div>
     <h2>${esc(title)}</h2><p>${esc(text)}</p>
     <p class="url">${esc(link.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "").replace(/\//g, "/\u200b"))}</p>
-    <div class="qrbtns">${openLabel ? `<button class="open" data-open>${esc(openLabel)}</button>` : ""}<button class="close" data-close>Close</button></div></div></div>`;
+    <div class="qrbtns"><button class="close" data-close>Close</button></div></div></div>`;
   $("#contact").classList.remove("hidden");
   return true;
 }
 const showContact = () => typeof VIDEO_LINK === "string" && showQR(typeof VIDEO_LINK_TITLE === "string" ? VIDEO_LINK_TITLE : "Contact Lake Michigan College",
   "Scan with your phone camera to contact Lake Michigan College.", VIDEO_LINK);
 const PARTNER_INFO = typeof PARTNER === "object" && PARTNER && PARTNER.url ? PARTNER : null;
+/* Partner box: logo, a line of text, and a QR code for their website. */
 if (PARTNER_INFO){
+  const svg = qrSVG(PARTNER_INFO.url, "QR code for " + (PARTNER_INFO.name || "their") + " website");
   $("#a-partner").innerHTML = `${PARTNER_INFO.logo ? `<img src="${esc(PARTNER_INFO.logo)}" alt="${esc(PARTNER_INFO.name || "")} logo">` : ""}
-    <div><b>${esc(PARTNER_INFO.text || PARTNER_INFO.name || "")}</b><span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\"/><path d=\"M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3\"/></svg>Touch for their website</span></div>`;
-  $("#a-partner").setAttribute("aria-label", (PARTNER_INFO.name || "Partner") + ". Touch for a QR code to their website.");
+    <div class="txt"><b>${esc(PARTNER_INFO.text || PARTNER_INFO.name || "")}</b><span>Scan with your phone camera to visit their website.</span></div>
+    ${svg ? `<div class="qrbox">${svg}</div>` : ""}`;
   $("#a-partner").classList.remove("hidden");
 }
 const hideContact = () => $("#contact").classList.add("hidden");
-/* The partner's site opens in its own tab. The kiosk can't see what happens there,
-   so it closes that tab after PARTNER.minutes, bringing the welcome screen back. */
-let siteTab = null, siteTimer = null;
-function openSite(url){
-  closeSite();
-  try { siteTab = window.open(url, "kiosk-site"); } catch(_){ siteTab = null; }
-  const mins = PARTNER_INFO && +PARTNER_INFO.minutes > 0 ? +PARTNER_INFO.minutes : 5;
-  if (siteTab) siteTimer = setTimeout(closeSite, mins * 60 * 1000);
-}
-function closeSite(){
-  clearTimeout(siteTimer); siteTimer = null;
-  try { if (siteTab && !siteTab.closed) siteTab.close(); } catch(_){}
-  siteTab = null;
-}
 function showAttract(){ hideContact(); $("#attract").classList.remove("hidden"); playVideo(); }
 /* Touches act on release (click), so the touch that closes the start screen ends here
    and can't land on the home screen underneath. Any stray click right after is ignored. */
@@ -1360,7 +1348,6 @@ $("#attract").addEventListener("click", e => {
   e.preventDefault();
   if (e.target.closest("#a-pause")){ setVideoPaused(!videoPaused); return; }
   if (e.target.closest("#contact")){
-    if (e.target.closest("[data-open]") && PARTNER_INFO){ hideContact(); openSite(PARTNER_INFO.url); return; }
     if (e.target.closest("[data-close]") || !e.target.closest(".card")) hideContact();
     return;
   }
@@ -1371,7 +1358,7 @@ $("#attract").addEventListener("click", e => {
     else if (e.target.closest(".ev:not(.noroom)")){ hideAttract(); resetIdle(); }
     return;
   }
-  if (e.target.closest("#a-partner") && PARTNER_INFO && showQR(PARTNER_INFO.name || "Website", "Scan with your phone camera to visit their website, or open it here.", PARTNER_INFO.url, "Open website")) return;
+  if (e.target.closest("#a-partner")) return;   // people scan this box; a touch here shouldn't start the kiosk
   hideAttract(); resetIdle();
 });
 playVideo();
