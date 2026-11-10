@@ -8,6 +8,10 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.13.6 (2026-11-10)
+- Second floor plan: the curved staircase arrow is back to its original direction (both plan files restored to their originals)
+- Turned ground floor plan: the exit numbers in the blue circles (1 to 4) now read upright; exit 2, cut off by the plan's top edge, is redrawn whole just inside it
+
 ## v2.13.5 (2026-11-10)
 - The "You are here" star is smaller and sits at the top of the grey lobby circle, above the LMC logo
 
