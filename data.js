@@ -108,6 +108,9 @@ const BUILDING_DIRECTIONS = {
    --------------------------------------------------------- */
 const YOU_ARE_HERE = {floor:1, x:77.3, y:44.0, label:"You are here"};
 const PLAN_CROP = {x0:2, x1:99, y0:2.5, y1:84};
+/* true: show the Todd Center plans turned 90 degrees to the right, to match the way
+   people face the board. Positions above stay as measured on the printed plan. */
+const TODD_MAP_TURNED = true;
 const FLOOR_NAME = {1:"Ground floor", 2:"Second floor"};
 
 const AREA = {

@@ -40,7 +40,7 @@ Current version: see `CHANGELOG.md` (also shown in the kiosk footer).
 | `media/` | The start screen video (`ATTRACT_VIDEO` in `data.js`) and the partner logo (`PARTNER`) | To change the video, upload one with a new file name and update `data.js` |
 | `lib/qrcode.js` | QR code maker used for the directions codes (MIT license, by Kazuhiko Arase) | No |
 | `qr-space-use.svg` | QR code for the space request page, shown when there are no events | Only if the link changes (make a new QR code with the same file name) |
-| `floor-ground.jpg`, `floor-second.jpg` | Todd Center floor plans | Only if building plans change |
+| `floor-ground.jpg`, `floor-second.jpg` | Todd Center floor plans (the `-turned` copies are the same plans turned 90 degrees right, used when `TODD_MAP_TURNED` is on) | Only if building plans change |
 | `scripts/` | The scripts the Actions run | Only if the LMC website changes |
 
 ## Fixing the directory

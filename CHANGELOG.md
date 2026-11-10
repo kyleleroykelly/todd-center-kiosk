@@ -8,6 +8,9 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.13.0 (2026-11-10)
+- Todd Center floor maps are turned 90 degrees to the right, to match the way people face the board (`TODD_MAP_TURNED` in `data.js`; turned plans are `floor-ground-turned.jpg` and `floor-second-turned.jpg`)
+
 ## v2.12.0 (2026-11-10)
 - The Berrien Talent Collaborative box shows its QR code right next to the logo; the pop-up and the Open website button are gone
 

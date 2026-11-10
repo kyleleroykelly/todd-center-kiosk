@@ -463,10 +463,18 @@ const byName = (a,b) => lastName(a.name).localeCompare(lastName(b.name)) || a.na
 const BH = "Benton Harbor Campus";
 const BUILDING_NAME = {todd:"Todd Center", main:"Main Building", hanson:"Hanson Technology Center", welch:"Welch Center",
   mendel:"Mendel Center", beckwith:"Beckwith Hall", southhaven:"South Haven Campus", niles:"Niles Campus", allegan:"Allegan"};
+/* TODD_MAP_TURNED (data.js) shows the Todd Center plans turned 90 degrees to the right, to
+   match the way people face the board. Room positions in data.js stay as measured on the
+   printed plan; the map turns them here. */
+const TODD_TURNED = typeof TODD_MAP_TURNED !== "undefined" && !!TODD_MAP_TURNED;
 const BUILDINGS = {
-  todd: {name:"Todd Center", campus:BH, crop:PLAN_CROP, floors:[
-    {n:1, label:FLOOR_NAME[1], img:"floor-ground.jpg", w:1600, h:2079},
-    {n:2, label:FLOOR_NAME[2], img:"floor-second.jpg", w:1600, h:2079}], rooms:{}}
+  todd: TODD_TURNED
+    ? {name:"Todd Center", campus:BH, turned:true, crop:{x0:100 - PLAN_CROP.y1, x1:100 - PLAN_CROP.y0, y0:PLAN_CROP.x0, y1:PLAN_CROP.x1}, floors:[
+        {n:1, label:FLOOR_NAME[1], img:"floor-ground-turned.jpg", w:2079, h:1600},
+        {n:2, label:FLOOR_NAME[2], img:"floor-second-turned.jpg", w:2079, h:1600}], rooms:{}}
+    : {name:"Todd Center", campus:BH, crop:PLAN_CROP, floors:[
+        {n:1, label:FLOOR_NAME[1], img:"floor-ground.jpg", w:1600, h:2079},
+        {n:2, label:FLOOR_NAME[2], img:"floor-second.jpg", w:1600, h:2079}], rooms:{}}
 };
 const MAP_ORDER = ["todd","main","hanson","welch","southhaven"];
 
@@ -675,7 +683,9 @@ function renderList(title, sub, items, opts = {}){
 
 /* ---------- Map ---------- */
 const pct = (v, a, b) => ((v - a) / (b - a) * 100).toFixed(2) + "%";
-function pinStyle(B, p, inv){ return `left:${pct(p.x,B.crop.x0,B.crop.x1)};top:${pct(p.y,B.crop.y0,B.crop.y1)};--inv:${inv}`; }
+/* Where a point from the printed plan lands on the map as shown (turned 90 degrees right if set). */
+const onMap = (B, p) => B.turned ? {x: 100 - p.y, y: p.x} : p;
+function pinStyle(B, p, inv){ const q = onMap(B, p); return `left:${pct(q.x,B.crop.x0,B.crop.x1)};top:${pct(q.y,B.crop.y0,B.crop.y1)};--inv:${inv}`; }
 const STAR = '<svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.2 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg>';
 
 function mapHTML(bkey, floor, target, targetLabel, noElev){
@@ -683,7 +693,7 @@ function mapHTML(bkey, floor, target, targetLabel, noElev){
   const fl = B.floors.find(f => f.n === floor) || B.floors[0];
   const isTodd = bkey === "todd";
   const tFloor = target ? target.f : null;
-  const wide = fl.w / fl.h > 1.2;
+  const wide = fl.w / fl.h > 1.2 && !isTodd;   // zoom in on wide building plans; the Todd Center fits as is
   if (current.zoom == null) current.zoom = (target && wide) ? 2.4 : 1;
   const z = (target && tFloor === fl.n) ? current.zoom : 1;
   const inv = (1 / z).toFixed(3);
@@ -699,10 +709,11 @@ function mapHTML(bkey, floor, target, targetLabel, noElev){
   }
   let origin = "50% 50%";
   if (target && tFloor === fl.n){
-    const xr = (target.x - B.crop.x0) / (B.crop.x1 - B.crop.x0);
+    const tq = onMap(B, target);
+    const xr = (tq.x - B.crop.x0) / (B.crop.x1 - B.crop.x0);
     const right = xr > 0.84 ? " right" : "";
     pins += `<div class="pin target${right}${target.approx ? " approx" : ""}" style="${pinStyle(B, target, inv)}"><span class="ring"></span><div class="dot"></div><span class="lbl">${esc(targetLabel)}${target.approx ? " (area)" : ""}</span></div>`;
-    origin = `${pct(target.x,B.crop.x0,B.crop.x1)} ${pct(target.y,B.crop.y0,B.crop.y1)}`;
+    origin = `${pct(tq.x,B.crop.x0,B.crop.x1)} ${pct(tq.y,B.crop.y0,B.crop.y1)}`;
   }
   const full = !!current.full;
   const icon = full
@@ -1273,7 +1284,7 @@ function renderCalendar(){
 
 /* Auto-update: reload when index.html or data.js changes on the server */
 /* Kiosk version: update this and CHANGELOG.md with every release. */
-const KIOSK_VERSION = "2.12.0";
+const KIOSK_VERSION = "2.13.0";
 document.getElementById("kiosk-version").textContent = "v" + KIOSK_VERSION;
 const UPDATE_CHECK_MINUTES = 15;
 let updatePending = false, siteSig = null;
