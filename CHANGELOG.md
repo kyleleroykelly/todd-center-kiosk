@@ -8,6 +8,9 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.13.7 (2026-11-11)
+- The "Host your event here" card is one compact row (QR code beside the text) sized by screen height, so Today's events fits without scrolling on the welcome and menu screens, including when browser bars take up space
+
 ## v2.13.6 (2026-11-10)
 - Second floor plan: the curved staircase arrow is back to its original direction (both plan files restored to their originals)
 - Turned ground floor plan: the exit numbers in the blue circles (1 to 4) now read upright; exit 2, cut off by the plan's top edge, is redrawn whole just inside it
