@@ -245,7 +245,7 @@
    "phone": "269-927-6713"
   },
   {
-   "id": "aescrima",
+   "id": "ascrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -256,7 +256,7 @@
    "phone": "269-927-8777"
   },
   {
-   "id": "ascrima",
+   "id": "aescrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -1906,17 +1906,6 @@
    "phone": "(269) 927-4851"
   },
   {
-   "id": "5d372a8e2ca6df6890dae129",
-   "name": "Facilities Management, Safety & Security",
-   "title": "Facilities Management, Safety & Security",
-   "dept": "",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "S-111",
-   "email": "abelden@lakemichigancollege.edu",
-   "phone": "(269) 925-7846"
-  },
-  {
    "id": "5d372a8e2ca6df6890dae126",
    "name": "Facilities Management, Safety & Security",
    "title": "Facilities Management, Safety & Security",
@@ -1926,6 +1915,17 @@
    "room": "S-104",
    "email": "Facilities@lakemichigancollege.edu",
    "phone": "269-927-8135"
+  },
+  {
+   "id": "5d372a8e2ca6df6890dae129",
+   "name": "Facilities Management, Safety & Security",
+   "title": "Facilities Management, Safety & Security",
+   "dept": "",
+   "campus": "Benton Harbor Campus",
+   "building": "Main Building",
+   "room": "S-111",
+   "email": "abelden@lakemichigancollege.edu",
+   "phone": "(269) 925-7846"
   },
   {
    "id": "fterris",
@@ -6053,5 +6053,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-11-10T15:33:56.954Z"
+ "updated": "2026-11-11T15:09:21.346Z"
 }
