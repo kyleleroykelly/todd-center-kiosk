@@ -8,6 +8,11 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.13.9 (2026-11-12)
+- The events updates also read the newer page format, where the calendar data sits in a `__NUXT_DATA__` block
+- Safety check: if a run finds no events anywhere on campus on any weekday, it stops and keeps the old file instead of saving an empty list, and logs what the page held
+- `events.json` restored to the last good copy, after one run saved an empty list
+
 ## v2.13.8 (2026-11-12)
 - Fixed: the events updates had failed since November 6, when the LMC calendar site changed its page format ("Unexpected token ';'"). The script now runs the page's data script in a sandbox, so extra statements don't break it, and logs a sample of the page if reading ever fails again
 - Update Actions use actions/checkout@v5, actions/setup-node@v5 and Node 22 (clears the Node.js 20 deprecation warning)

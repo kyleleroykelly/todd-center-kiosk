@@ -30,23 +30,66 @@ async function get(url){
     }
   }
 }
-// The calendar pages carry their data in a <script> that sets window.__NUXT__. Run that whole
-// script in an empty sandbox and read the result, so extra statements after the data (the
-// site added some in November 2026) don't break it. If it still fails, log a short sample
-// of the script so the next change is easy to see in the Actions log.
+// Turn Nuxt 3's compact "devalue" payload (a flat JSON array of values that point at each
+// other by index) back into ordinary objects.
+function unflatten(values){
+  if (!Array.isArray(values)) return values;
+  const done = new Map();
+  const SPECIAL = {"-1": undefined, "-3": NaN, "-4": Infinity, "-5": -Infinity, "-6": -0};
+  const hydrate = i => {
+    if (String(i) in SPECIAL) return SPECIAL[String(i)];
+    if (done.has(i)) return done.get(i);
+    const v = values[i];
+    if (!v || typeof v !== "object"){ done.set(i, v); return v; }
+    if (Array.isArray(v)){
+      if (typeof v[0] === "string"){                       // a tagged value: ["Reactive", 5], ["Date", "..."], ...
+        const tag = v[0];
+        if (tag === "Date"){ const d = new Date(v[1]); done.set(i, d); return d; }
+        if (tag === "Set" || tag === "Map" || tag === "null" || tag === "Object" || tag === "RegExp" || tag === "BigInt"){
+          if (tag === "Set"){ const out = []; done.set(i, out); for (let k = 1; k < v.length; k++) out.push(hydrate(v[k])); return out; }
+          if (tag === "Map" || tag === "null"){ const out = {}; done.set(i, out); for (let k = 1; k < v.length; k += 2) out[String(hydrate(v[k]))] = hydrate(v[k + 1]); return out; }
+          done.set(i, v[1]); return v[1];
+        }
+        const inner = v.length > 1 ? hydrate(v[1]) : undefined;   // Reactive, Ref, ShallowReactive, ... are wrappers
+        done.set(i, inner); return inner;
+      }
+      const out = []; done.set(i, out);
+      for (const n of v) out.push(n === -2 ? undefined : hydrate(n));
+      return out;
+    }
+    const out = {}; done.set(i, out);
+    for (const [k, n] of Object.entries(v)) out[k] = hydrate(n);
+    return out;
+  };
+  return hydrate(0);
+}
+// The calendar pages carry their data in the page itself: older pages in a <script> that sets
+// window.__NUXT__, newer ones (from November 2026) in a <script id="__NUXT_DATA__"> JSON block,
+// with window.__NUXT__ holding only settings. Read whichever is there; if neither works, put a
+// short sample in the error so the next format change is easy to see in the Actions log.
 function nuxt(html){
-  const m = html.match(/<script[^>]*>\s*(window\.__NUXT__\s*=[\s\S]*?)<\/script>/);
-  if (!m) throw new Error("Calendar page format changed: no __NUXT__ data found. Page starts: " + html.slice(0, 200).replace(/\s+/g, " "));
-  const win = {};
-  const ctx = vm.createContext({window: win, document: {}, navigator: {}, location: {}});
-  try {
-    vm.runInContext(m[1], ctx, {timeout: 2000});
-  } catch (e){
-    const src = m[1];
-    throw new Error(`${e.message}. Data script (${src.length} chars) starts: ${src.slice(0, 120)} ... ends: ${src.slice(-160)}`);
+  const found = {};
+  const json = html.match(/<script[^>]*id=["']__NUXT_DATA__["'][^>]*>([\s\S]*?)<\/script>/);
+  if (json){
+    try { found.payload = unflatten(JSON.parse(json[1])); }
+    catch (e){ throw new Error(`could not read the __NUXT_DATA__ block (${e.message}). It starts: ${json[1].slice(0, 160)}`); }
   }
-  if (!win.__NUXT__) throw new Error("Calendar page format changed: __NUXT__ was not set");
-  return win.__NUXT__;
+  const m = html.match(/<script[^>]*>\s*(window\.__NUXT__\s*=[\s\S]*?)<\/script>/);
+  if (m){
+    const win = {};
+    const ctx = vm.createContext({window: win, document: {}, navigator: {}, location: {}});
+    try { vm.runInContext(m[1], ctx, {timeout: 2000}); found.legacy = win.__NUXT__; }
+    catch (e){ if (!found.payload) throw new Error(`${e.message}. Data script (${m[1].length} chars) starts: ${m[1].slice(0, 120)} ... ends: ${m[1].slice(-160)}`); }
+  }
+  if (!found.payload && !found.legacy) throw new Error("Calendar page format changed: no page data found. Page starts: " + html.slice(0, 200).replace(/\s+/g, " "));
+  return found;
+}
+// A short description of what a page's data holds, for the log when no events are found.
+function describe(data){
+  const keys = new Map();
+  walk(data, o => { if (!Array.isArray(o)) for (const k of Object.keys(o)) keys.set(k, (keys.get(k) || 0) + 1); });
+  const top = [...keys].sort((a, b) => b[1] - a[1]).slice(0, 40).map(([k, n]) => `${k}:${n}`).join(" ");
+  return `sources: ${Object.keys(data).join(", ") || "none"}; most common keys: ${top}`;
 }
 function walk(o, fn, seen = new Set()){
   if (!o || typeof o !== "object" || seen.has(o)) return;
@@ -81,7 +124,11 @@ async function day(dateStr){
   const data = nuxt(await get(`${SITE}/${y}/${Number(mo)}/${Number(d)}`));
   const meetings = new Map();
   walk(data, o => { if (o.id && o.eventData && o.eventData.id && "startTime" in o) meetings.set(o.id, o); });
-  if (!meetings.size) console.log(`${dateStr}: no events listed`);
+  seenOnDay.set(dateStr, meetings.size);
+  if (!meetings.size){
+    console.log(`${dateStr}: no events listed`);
+    if (!described){ described = true; console.log(`  page data for ${dateStr}: ${describe(data)}`); }
+  }
   const out = [];
   for (const m of meetings.values()){
     let room = null;
@@ -102,6 +149,7 @@ async function day(dateStr){
   return out;
 }
 
+const seenOnDay = new Map(); let described = false;
 const wanted = [...Array(DAYS_AHEAD + 1)].map((_, i) => ymd(new Date(Date.now() + i * 864e5)));
 const dates = [], events = [], failed = [];
 for (const d of wanted){
@@ -113,6 +161,12 @@ for (const d of wanted){
 // instead of showing them as empty. If most days failed, keep the old file.
 if (failed.length) console.log(`Could not read ${failed.length} of ${wanted.length} day(s): ${failed.join(", ")}`);
 if (dates.length < wanted.length / 2) throw new Error(`Only ${dates.length} of ${wanted.length} days could be read, so ${OUT} was not updated.`);
+// The LMC calendar lists something somewhere on campus every weekday. If no day had a single
+// event (not just none in the Todd Center), the page was read but the events weren't found,
+// so keep the old file rather than tell the kiosk the building is empty.
+const weekday = dates.some(d => { const w = new Date(d + "T12:00:00Z").getUTCDay(); return w >= 1 && w <= 5; });
+if (weekday && dates.every(d => !seenOnDay.get(d)))
+  throw new Error(`No events were found anywhere on campus on ${dates.join(", ")}. The calendar page format has probably changed (see the page data line above), so ${OUT} was not updated.`);
 events.sort((a, b) => (a.date + (a.start || "")).localeCompare(b.date + (b.start || "")));
 const body = {source: SITE, building: "Todd Center", dates, events};
 let prev = null;
