@@ -8,6 +8,10 @@ Versions use MAJOR.MINOR.PATCH. The current version shows in the kiosk footer an
 
 When you release a change, update `KIOSK_VERSION`, add an entry here, and start the commit message with the version, for example `v2.0.1: fix room for Financial Aid`.
 
+## v2.13.8 (2026-11-12)
+- Fixed: the events updates had failed since November 6, when the LMC calendar site changed its page format ("Unexpected token ';'"). The script now runs the page's data script in a sandbox, so extra statements don't break it, and logs a sample of the page if reading ever fails again
+- Update Actions use actions/checkout@v5, actions/setup-node@v5 and Node 22 (clears the Node.js 20 deprecation warning)
+
 ## v2.13.7 (2026-11-11)
 - The "Host your event here" card is one compact row (QR code beside the text) sized by screen height, so Today's events fits without scrolling on the welcome and menu screens, including when browser bars take up space
 

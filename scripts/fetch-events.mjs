@@ -1,5 +1,5 @@
 // Pulls Todd Center events from the LMC Coursedog calendar into events.json.
-// Runs in GitHub Actions on a schedule. Node 20+, no dependencies.
+// Runs in GitHub Actions on a schedule. Node 22+, no dependencies.
 import vm from "node:vm";
 import fs from "node:fs";
 
@@ -30,11 +30,23 @@ async function get(url){
     }
   }
 }
+// The calendar pages carry their data in a <script> that sets window.__NUXT__. Run that whole
+// script in an empty sandbox and read the result, so extra statements after the data (the
+// site added some in November 2026) don't break it. If it still fails, log a short sample
+// of the script so the next change is easy to see in the Actions log.
 function nuxt(html){
-  const m = html.match(/<script>window\.__NUXT__=([\s\S]*?)<\/script>/);
-  if (!m) throw new Error("Calendar page format changed: no __NUXT__ data found");
-  const ctx = vm.createContext(Object.create(null));
-  return vm.runInContext("(" + m[1].replace(/;\s*$/, "") + ")", ctx, {timeout: 2000});
+  const m = html.match(/<script[^>]*>\s*(window\.__NUXT__\s*=[\s\S]*?)<\/script>/);
+  if (!m) throw new Error("Calendar page format changed: no __NUXT__ data found. Page starts: " + html.slice(0, 200).replace(/\s+/g, " "));
+  const win = {};
+  const ctx = vm.createContext({window: win, document: {}, navigator: {}, location: {}});
+  try {
+    vm.runInContext(m[1], ctx, {timeout: 2000});
+  } catch (e){
+    const src = m[1];
+    throw new Error(`${e.message}. Data script (${src.length} chars) starts: ${src.slice(0, 120)} ... ends: ${src.slice(-160)}`);
+  }
+  if (!win.__NUXT__) throw new Error("Calendar page format changed: __NUXT__ was not set");
+  return win.__NUXT__;
 }
 function walk(o, fn, seen = new Set()){
   if (!o || typeof o !== "object" || seen.has(o)) return;

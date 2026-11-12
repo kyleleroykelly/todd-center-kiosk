@@ -1,5 +1,5 @@
 // Pulls the LMC employee directory into directory.json for the kiosk.
-// Runs nightly in GitHub Actions. Node 20+, no dependencies.
+// Runs nightly in GitHub Actions. Node 22+, no dependencies.
 import fs from "node:fs";
 
 const BASE = "https://www.lakemichigancollege.edu/directory";
