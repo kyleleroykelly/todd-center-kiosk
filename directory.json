@@ -1,6 +1,6 @@
 {
  "source": "https://www.lakemichigancollege.edu/directory",
- "count": 550,
+ "count": 549,
  "entries": [
   {
    "id": "akoo",
@@ -245,7 +245,7 @@
    "phone": "269-927-6713"
   },
   {
-   "id": "ascrima",
+   "id": "aescrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -256,7 +256,7 @@
    "phone": "269-927-8777"
   },
   {
-   "id": "aescrima",
+   "id": "ascrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -705,17 +705,6 @@
    "room": "",
    "email": "bursar@lakemichigancollege.edu",
    "phone": "269-927-8610"
-  },
-  {
-   "id": "vsherwood",
-   "name": "Buzz Sherwood",
-   "title": "Maintenance Technician",
-   "dept": "Facilities Management",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "",
-   "email": "vsherwood@lakemichigancollege.edu",
-   "phone": ""
   },
   {
    "id": "cpauley",
@@ -6053,5 +6042,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-11-11T15:09:21.346Z"
+ "updated": "2026-11-13T15:21:37.483Z"
 }
