@@ -1,6 +1,6 @@
 {
  "source": "https://www.lakemichigancollege.edu/directory",
- "count": 549,
+ "count": 547,
  "entries": [
   {
    "id": "akoo",
@@ -245,7 +245,7 @@
    "phone": "269-927-6713"
   },
   {
-   "id": "aescrima",
+   "id": "ascrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -256,7 +256,7 @@
    "phone": "269-927-8777"
   },
   {
-   "id": "ascrima",
+   "id": "aescrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -342,17 +342,6 @@
    "room": "B203D",
    "email": "akurtz@lakemichigancollege.edu",
    "phone": "269-927-6197"
-  },
-  {
-   "id": "astrong",
-   "name": "Angela Strong",
-   "title": "Adjunct Faculty, Nursing",
-   "dept": "Health Sciences",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "",
-   "email": "astrong@lakemichigancollege.edu",
-   "phone": ""
   },
   {
    "id": "alaingren",
@@ -4227,17 +4216,6 @@
    "phone": "(269) 637-7507 0"
   },
   {
-   "id": "mwagner",
-   "name": "Mia Wagner",
-   "title": "Specialist, Financial Aid",
-   "dept": "Financial Aid",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "",
-   "email": "mwagner@lakemichigancollege.edu",
-   "phone": "(269) 927-8609"
-  },
-  {
    "id": "mdeschaaf",
    "name": "Michael De Schaaf",
    "title": "PT Adjunct Viticulture",
@@ -6042,5 +6020,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-11-13T15:21:37.483Z"
+ "updated": "2026-11-14T14:07:21.573Z"
 }
