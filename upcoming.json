@@ -2,7 +2,6 @@
   "source": "https://lakemichigancollege.events.prod.coursedog.com",
   "building": "Todd Center",
   "dates": [
-    "2026-11-14",
     "2026-11-15",
     "2026-11-16",
     "2026-11-17",
@@ -64,7 +63,8 @@
     "2027-01-12",
     "2027-01-13",
     "2027-01-14",
-    "2027-01-15"
+    "2027-01-15",
+    "2027-01-16"
   ],
   "events": [
     {
@@ -198,5 +198,5 @@
       "url": "https://lakemichigancollege.events.prod.coursedog.com/events/LM3hUcUd3xCgf5f67uZf/onuyTPt62LdUgyxcd2HG19"
     }
   ],
-  "updated": "2026-11-14T13:48:32.194Z"
+  "updated": "2026-11-15T14:18:43.595Z"
 }
