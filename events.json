@@ -2,20 +2,10 @@
   "source": "https://lakemichigancollege.events.prod.coursedog.com",
   "building": "Todd Center",
   "dates": [
-    "2026-11-16",
-    "2026-11-17"
+    "2026-11-17",
+    "2026-11-18"
   ],
   "events": [
-    {
-      "date": "2026-11-16",
-      "start": "08:00",
-      "end": "17:00",
-      "title": "Berrien County Public Safety Communication Center Event",
-      "location": "TC-1413 (Classroom)",
-      "room": "TC-1413",
-      "details": "Event open to public, but it is a training class that must be registered and paid for prior to attending class.",
-      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/ryCigItsfoH4EHBMa596/MyuwCHHcltsPMwybze6W"
-    },
     {
       "date": "2026-11-17",
       "start": "18:00",
@@ -27,5 +17,5 @@
       "url": "https://lakemichigancollege.events.prod.coursedog.com/events/LM3hUcUd3xCgf5f67uZf/onuyTPt62LdUgyxcd2HG11"
     }
   ],
-  "updated": "2026-11-16T09:18:59.602Z"
+  "updated": "2026-11-17T12:58:18.539Z"
 }
