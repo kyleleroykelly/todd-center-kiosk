@@ -1,6 +1,6 @@
 {
  "source": "https://www.lakemichigancollege.edu/directory",
- "count": 547,
+ "count": 535,
  "entries": [
   {
    "id": "akoo",
@@ -89,17 +89,6 @@
    "room": "",
    "email": "aboyan@lakemichigancollege.edu",
    "phone": ""
-  },
-  {
-   "id": "ageorge",
-   "name": "Alexander George",
-   "title": "Baseball Coach",
-   "dept": "",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "",
-   "email": "ageorge@lakemichigancollege.edu",
-   "phone": "(269) 927-6296"
   },
   {
    "id": "aketels",
@@ -192,7 +181,7 @@
   {
    "id": "apscholka",
    "name": "Alton Pscholka",
-   "title": "Vice President, Enrollment, Marketing, and Governmental Relations",
+   "title": "Vice President, Enrollment, Marketing, and Government Relations",
    "dept": "Enrollment, Marketing, and Governmental Relations",
    "campus": "Benton Harbor Campus",
    "building": "Main Building",
@@ -531,17 +520,6 @@
    "phone": ""
   },
   {
-   "id": "rszawara",
-   "name": "Bob Szawara",
-   "title": "Maintenance Technician I - PT",
-   "dept": "Napier Campus Building Services",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "",
-   "email": "rszawara@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
    "id": "5d372a8e2ca6df6890dae12a",
    "name": "Bookstore - Benton Harbor",
    "title": "Bookstore - Benton Harbor",
@@ -817,17 +795,6 @@
    "phone": "(269) 927-6830"
   },
   {
-   "id": "cdihle",
-   "name": "Cecelia Dihle",
-   "title": "Part-Time Math Instructor",
-   "dept": "Mathematics, PE and Wellness",
-   "campus": "Benton Harbor Campus",
-   "building": "Napier Avenue Main Academic Building",
-   "room": "",
-   "email": "cdihle@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
    "id": "5d372a8e2ca6df6890dae128",
    "name": "Central Duplicating",
    "title": "Central Duplicating",
@@ -927,17 +894,6 @@
    "phone": "269-927-6908"
   },
   {
-   "id": "csaldana",
-   "name": "Chistina Saldana",
-   "title": "Career Development Specialist",
-   "dept": "Workforce Development",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "",
-   "email": "csaldana@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
    "id": "bendixen",
    "name": "Chris Bendixen",
    "title": "Adjunct Faculty, Math",
@@ -947,17 +903,6 @@
    "room": "",
    "email": "bendixen@lakemichigancollege.edu",
    "phone": ""
-  },
-  {
-   "id": "chaack",
-   "name": "Christian Haack",
-   "title": "Co-Head Men's Soccer Coach",
-   "dept": "Intercollegiate Athletics",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "",
-   "email": "chaack@lakemichigancollege.edu",
-   "phone": "(269) 927-4823"
   },
   {
    "id": "cmuhlenkamp",
@@ -1851,17 +1796,6 @@
    "phone": "269-927-8703"
   },
   {
-   "id": "emwenya",
-   "name": "Erin Mwenya",
-   "title": "Director, Finance",
-   "dept": "Finance",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "B-202E",
-   "email": "emwenya@lakemichigancollege.edu",
-   "phone": "(269) 927-6759"
-  },
-  {
    "id": "63f624699aa79341c48f4cfd",
    "name": "Event Scheduling",
    "title": "Event Scheduling",
@@ -1992,17 +1926,6 @@
    "room": "C-324B",
    "email": "miles@lakemichigancollege.edu",
    "phone": "269-927-8113"
-  },
-  {
-   "id": "fgrzebyk",
-   "name": "Frank Grzebyk",
-   "title": "Adjunct Faculty, History",
-   "dept": "Arts & Sciences Education",
-   "campus": "",
-   "building": "",
-   "room": "",
-   "email": "fgrzebyk@lakemichigancollege.edu",
-   "phone": ""
   },
   {
    "id": "stijnman",
@@ -2467,17 +2390,6 @@
    "phone": ""
   },
   {
-   "id": "jcollins",
-   "name": "Jason Collins",
-   "title": "Part-Time Faculty, Business",
-   "dept": "Career & Workforce Education",
-   "campus": "",
-   "building": "",
-   "room": "",
-   "email": "jcollins@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
    "id": "jgerman",
    "name": "Jason German",
    "title": "Assistance Baseball Coach",
@@ -2915,17 +2827,6 @@
    "building": "",
    "room": "",
    "email": "jcrou897@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
-   "id": "jwessell",
-   "name": "Jonathan Wessell",
-   "title": "Part-Time Faculty, Geography",
-   "dept": "Arts & Sciences Education",
-   "campus": "",
-   "building": "",
-   "room": "",
-   "email": "jwessell@lakemichigancollege.edu",
    "phone": ""
   },
   {
@@ -3732,17 +3633,6 @@
    "phone": "269-927-8171"
   },
   {
-   "id": "lpeppel",
-   "name": "Lisa Peppel",
-   "title": "Assistant Softball Coach",
-   "dept": "Intercollegiate Athletics",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "",
-   "email": "lpeppel@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
    "id": "lsummerfelt",
    "name": "Lisa Summerfelt",
    "title": "Professional Tutor",
@@ -3807,17 +3697,6 @@
    "room": "C-222E",
    "email": "lschumacher@lakemichigancollege.edu",
    "phone": "269-927-8134"
-  },
-  {
-   "id": "lford",
-   "name": "Lydia Ford",
-   "title": "",
-   "dept": "",
-   "campus": "Benton Harbor Campus",
-   "building": "Napier Avenue Main Academic Building",
-   "room": "",
-   "email": "lford@lakemichigancollege.edu",
-   "phone": "0"
   },
   {
    "id": "llehman",
@@ -5580,17 +5459,6 @@
    "phone": "269-927-8964"
   },
   {
-   "id": "tyirchott",
-   "name": "Terry Yirchott",
-   "title": "Maintenance Technician I",
-   "dept": "Facilities Management",
-   "campus": "Benton Harbor Campus",
-   "building": "Main Building",
-   "room": "",
-   "email": "tyirchott@lakemichigancollege.edu",
-   "phone": ""
-  },
-  {
    "id": "63752d4ba43225ac99c463c2",
    "name": "Testing and Tutoring Services",
    "title": "Testing and Tutoring Services",
@@ -6020,5 +5888,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-11-17T16:52:20.417Z"
+ "updated": "2026-11-18T16:25:54.324Z"
 }
