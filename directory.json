@@ -234,7 +234,7 @@
    "phone": "269-927-6713"
   },
   {
-   "id": "ascrima",
+   "id": "aescrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -245,7 +245,7 @@
    "phone": "269-927-8777"
   },
   {
-   "id": "aescrima",
+   "id": "ascrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -3310,7 +3310,7 @@
    "campus": "Benton Harbor Campus",
    "building": "Welch Center",
    "room": "A-106",
-   "email": "khudson@lakemichigancollege.edu",
+   "email": "kasimpson@lakemichigancollege.edu",
    "phone": "(269) 927-4731"
   },
   {
@@ -5888,5 +5888,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-11-19T16:32:21.377Z"
+ "updated": "2026-11-21T15:19:44.223Z"
 }
