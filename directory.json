@@ -234,7 +234,7 @@
    "phone": "269-927-6713"
   },
   {
-   "id": "aescrima",
+   "id": "ascrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -245,7 +245,7 @@
    "phone": "269-927-8777"
   },
   {
-   "id": "ascrima",
+   "id": "aescrima",
    "name": "Amy Scrima",
    "title": "Faculty, Psychology",
    "dept": "Arts & Sciences Education",
@@ -3558,7 +3558,7 @@
   {
    "id": "lmccoskey",
    "name": "Lia McCoskey",
-   "title": "Faculty, English and Writing Lab Director",
+   "title": "Faculty, English",
    "dept": "Arts & Sciences Education",
    "campus": "Benton Harbor Campus",
    "building": "Main Building",
@@ -4372,7 +4372,7 @@
   {
    "id": "brittin",
    "name": "Nicholas Brittin",
-   "title": "Faculty, English",
+   "title": "Faculty, English & Writing Lab Director",
    "dept": "Arts & Sciences",
    "campus": "Benton Harbor Campus",
    "building": "Main Building",
@@ -5888,5 +5888,5 @@
    "phone": "269-927-8133"
   }
  ],
- "updated": "2026-11-21T15:19:44.223Z"
+ "updated": "2026-11-25T17:57:03.232Z"
 }
