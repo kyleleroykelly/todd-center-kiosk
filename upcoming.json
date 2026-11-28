@@ -2,7 +2,6 @@
   "source": "https://lakemichigancollege.events.prod.coursedog.com",
   "building": "Todd Center",
   "dates": [
-    "2026-11-27",
     "2026-11-28",
     "2026-11-29",
     "2026-11-30",
@@ -64,7 +63,8 @@
     "2027-01-25",
     "2027-01-26",
     "2027-01-27",
-    "2027-01-28"
+    "2027-01-28",
+    "2027-01-29"
   ],
   "events": [
     {
@@ -186,7 +186,17 @@
       "room": "TC-1413",
       "details": "",
       "url": "https://lakemichigancollege.events.prod.coursedog.com/events/LM3hUcUd3xCgf5f67uZf/onuyTPt62LdUgyxcd2HG21"
+    },
+    {
+      "date": "2027-01-29",
+      "start": "08:00",
+      "end": "16:00",
+      "title": "Berrien RESA: GSRP Professional Development",
+      "location": "TC-1304/06/08 (Three Rooms Combined)",
+      "room": "TC-1304",
+      "details": "",
+      "url": "https://lakemichigancollege.events.prod.coursedog.com/events/lHYTm0FU2N5tZGb4gOGO/J2pn4ETBhEW6pAgIpy27"
     }
   ],
-  "updated": "2026-11-27T16:59:13.623Z"
+  "updated": "2026-11-28T15:50:08.657Z"
 }
